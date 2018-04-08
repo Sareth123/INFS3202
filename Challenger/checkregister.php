@@ -20,15 +20,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $table_emails = $row['email'];
     if($username == $table_users||$email==$table_emails) // checks if there are any matching fields
     {
-      $bool = false; // sets bool to false
-      //Print '<script>alert("Username has been taken!");</script>'; //Prompts the user
-      //Print '<script>window.location.assign("register.php");</script>'; // redirects to register.php
+      $bool = false;
+      echo"This user exists";
+      return;
+
     }
   }
   if($bool) // checks if bool is true
   {
     mysqli_query($con,"INSERT INTO users (username, password, firstname, lastname, email, postcode) VALUES ('$username','$password','$firstname','$lastname','$email','$postcode')"); //Inserts the value to table users
-
+    echo"Success";
   }
 }
 ?>

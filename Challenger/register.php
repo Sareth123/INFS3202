@@ -16,7 +16,7 @@
       <p>Enter last name: <input type="text" name="lastname" required="required" id="last"/></p> <br/>
       <p>Enter email: <input type="text" name="email" required="required" id="em" /></p> <br/>
       <p>Enter postcode: <input type="text" name="postcode" required="required" id="post" /></p> <br/>
-      <input type="submit" class="btn btn-primary" onClick="theFunction()" value="test" id="test"/>
+      <input type="submit" class="btn btn-primary" onClick="theFunction()" value="Create a Team" id="new_team"/>
     </div>
   </body>
 </html>
@@ -34,9 +34,15 @@
     $.ajax({
       type:"POST",
       url:"/Challenger/checkregister.php",
-      data:dataString
+      data:dataString,
+      success: function(html) {
+        if(html=='Success'){
+           $("#register_body").remove();
+          $("#body").load("/Challenger/newteam.php");
+        }{
+      alert(html);
+      }
+      }
     });
-    $("#register_body").remove();
-    $("#body").load("/Challenger/newteam.php");
   };
 </script>
