@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Challenger</title>
+
     </head>
     <body>
         <script src=https://code.jquery.com/jquery-3.2.1.min.js></script>
