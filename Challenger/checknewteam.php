@@ -4,7 +4,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-  $name = mysqli_real_escape_string($con,$_POST['name']);
+  $name = $_POST['name'];
   
     $bool = true;
 
@@ -16,16 +16,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($name == $table_names) // checks if there are any matching fields
     {
       $bool = false; // sets bool to false
-      Print '<script>alert("Name has been taken!");</script>'; //Prompts the user
-      Print '<script>window.location.assign("new_team.php");</script>'; // redirects to register.php
+      echo"bruh";
     }
   }
   if($bool) // checks if bool is true
   {
     mysqli_query($con,"INSERT INTO teams (name) VALUES ('$name')"); //Inserts the value to table users
-    Print '<script>alert("Successfully Registered!");</script>'; // Prompts the user
-   Print '<script>window.location.assign("new_team.php");</script>'; // redirects to register.php
-   header("location: newteam.php");
+    echo"Success";
   }
 }
 ?>

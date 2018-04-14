@@ -9,7 +9,7 @@
     $bool = true;
 
      
-   mysqli_select_db($con,"first_db");
+   mysqli_select_db($con,"challenger");
     $query = mysqli_query($con,"SELECT * from users WHERE username='$username'"); // Query the users table
     $exists = mysqli_num_rows($query); //Checks if username exists
     $table_users = "";
@@ -33,12 +33,12 @@
        {
         
         Print '<script>alert("Incorrect Password!");</script>'; // Prompts the user
-        Print '<script>window.location.assign("login.php");</script>'; // redirects to login.php
+        Print '<script>window.location.assign("index.php");</script>'; // redirects to login.php
        }
     }
     else
     {
         Print '<script>alert("No Users");</script>'; // Prompts the user
-        Print '<script>window.location.assign("login.php");</script>'; // redirects to login.php
+        Print '<script>window.location.assign("index.php");</script>'; // redirects to login.php
     }
 ?>
