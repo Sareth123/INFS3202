@@ -1,17 +1,23 @@
 <?php
+session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   $con=mysqli_connect("localhost", "root","") ;
   if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
   $username = $_POST['user'];
+  if(empty($username)){
+    $bool = false;
+    echo "Username has been entered incorrectly";
+    return;
+  }
   $password = $_POST['pass'];
   $firstname = $_POST['name'];
   $lastname = $_POST['name'];
   $email = $_POST['em'];
   $postcode = $_POST['post'];
   $bool = true;
-
+  if(!empty($username))
   mysqli_select_db($con,"challenger"); //Connect to database
   $query = mysqli_query($con,"SELECT * FROM users"); //Query the users table
   while($row = mysqli_fetch_array($query)) //display all rows from query
@@ -28,7 +34,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   if($bool) // checks if bool is true
   {
-    mysqli_query($con,"INSERT INTO users (username, password, firstname, lastname, email, postcode) VALUES ('$username','$password','$firstname','$lastname','$email','$postcode')"); //Inserts the value to table users
+    $_SESSION['username']=$username;
+    $_SESSION['password']=$password;
+    $_SESSION['firstname']=$firstname;
+    $_SESSION['lastname']=$lastname;
+    $_SESSION['email']=$email;
+    $_SESSION['postcode']=$postcode;
     echo"Success";
   }
 }

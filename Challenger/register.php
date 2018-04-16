@@ -29,6 +29,7 @@
     var last = document.getElementById("last").value;
     var em = document.getElementById("em").value;
     var post = document.getElementById("post").value;
+
     var dataString = 'user=' + user + '&pass=' + pass +'&name='+name+'&last='+last+'&em='+em+'&post= '+post+' ';
     console.log(dataString);
     $.ajax({
@@ -36,7 +37,8 @@
       url:"/Challenger/checkregister.php",
       data:dataString,
       success: function(html) {
-        if(html=='Success'){
+        if(html.includes('Success')){
+          alert(html);
            $("#register_body").remove();
           $("#body").load("/Challenger/newteam.php");
         }{
