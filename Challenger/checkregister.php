@@ -1,10 +1,9 @@
 <?php
+
+include('connect.php');
 session_start();
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $con=mysqli_connect("localhost", "root","") ;
-  if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+$db = new MySQLDatabase();
+$db->connect("challenger");
   $username = $_POST['user'];
   if(empty($username)){
     $bool = false;
@@ -17,9 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $email = $_POST['em'];
   $postcode = $_POST['post'];
   $bool = true;
-  if(!empty($username))
-  mysqli_select_db($con,"challenger"); //Connect to database
-  $query = mysqli_query($con,"SELECT * FROM users"); //Query the users table
+  $query = mysqli_query($db->link,"SELECT * FROM users"); //Query the users table
   while($row = mysqli_fetch_array($query)) //display all rows from query
   {
     $table_users = $row['username']; // the first username row is passed on to $table_users, and so on until the query is finished
@@ -42,5 +39,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $_SESSION['postcode']=$postcode;
     echo"Success";
   }
-}
 ?>
