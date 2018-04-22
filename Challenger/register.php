@@ -16,13 +16,14 @@
       <p>Enter last name: <input type="text" name="lastname" required="required" id="last"/></p> <br/>
       <p>Enter email: <input type="text" name="email" required="required" id="em" /></p> <br/>
       <p>Enter postcode: <input type="text" name="postcode" required="required" id="post" /></p> <br/>
-      <input type="submit" class="btn btn-primary" onClick="theFunction()" value="Create a Team" id="new_team"/>
+      <input type="submit" class="btn btn-primary" onClick="newTeam()" value="Create a Team" id="new_team"/>
+      <input type="submit" class="btn btn-primary" onClick="joinTeam()" value="Join team"/>
     </div>
   </body>
 </html>
 
 <script>
-  function theFunction(){
+  function newTeam(){
     var user = document.getElementById("user").value;
     var pass = document.getElementById("pass").value;
     var name = document.getElementById("name").value;
@@ -41,6 +42,31 @@
           alert(html);
            $("#register_body").remove();
           $("#body").load("/Challenger/newteam.php");
+        }{
+      alert(html);
+      }
+      }
+    });
+  };
+  function joinTeam(){
+    var user = document.getElementById("user").value;
+    var pass = document.getElementById("pass").value;
+    var name = document.getElementById("name").value;
+    var last = document.getElementById("last").value;
+    var em = document.getElementById("em").value;
+    var post = document.getElementById("post").value;
+
+    var dataString = 'user=' + user + '&pass=' + pass +'&name='+name+'&last='+last+'&em='+em+'&post= '+post+' ';
+    console.log(dataString);
+    $.ajax({
+      type:"POST",
+      url:"/Challenger/checkregister.php",
+      data:dataString,
+      success: function(html) {
+        if(html.includes('Success')){
+          alert(html);
+           $("#register_body").remove();
+          $("#body").load("/Challenger/jointeam.php");
         }{
       alert(html);
       }

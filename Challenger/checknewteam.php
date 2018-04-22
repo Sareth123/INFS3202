@@ -5,6 +5,7 @@
   $db->connect("challenger");
    
   $name = $_POST['name'];
+
   $username = $_SESSION['username'];
   $password = $_SESSION['password'];
   $firstname = $_SESSION['firstname'];
@@ -28,8 +29,12 @@
   {
     mysqli_query($db->link,"INSERT INTO users (username, password, firstname, lastname, email, postcode) VALUES ('$username',PASSWORD('$password'),'$firstname','$lastname','$email','$postcode')"); //Inserts the value to table users
     mysqli_query($db->link,"INSERT INTO teams (name) VALUES ('$name')"); //Inserts the value to table team
-    $query1=mysqli_query($db->link,"SELECT user_id FROM users WHERE username=('$username')");
-    $query2=mysqli_query($db->link,"SELECT team_id FROM teams WHERE name = ('$name')");
+    $id= mysqli_query($db->link,"SELECT team_id FROM teams WHERE name=('$name')");
+    $rid=mysqli_fetch_array($id);
+    $strid= $rid[0];
+    $code=$strid.substr($name,0,4);
+    $code=str_replace(" ","",$code);
+    mysqli_query($db->link,"UPDATE teams SET code =('$code')WHERE name=('$name')");
     
     mysqli_query($db->link,"INSERT INTO team_members (team_id, user_id) SELECT team_id,user_id FROM teams, users WHERE name=('$name') AND username =('$username')");
 
