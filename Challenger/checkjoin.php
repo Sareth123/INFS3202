@@ -28,5 +28,6 @@
     mysqli_query($db->link,"INSERT INTO team_members (team_id, user_id) SELECT team_id,user_id FROM teams, users WHERE team_id=('$code') AND username =('$username')");
 
     echo"Success";
+    session_destroy();
   }
 ?>

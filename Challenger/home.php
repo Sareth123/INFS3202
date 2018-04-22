@@ -12,53 +12,31 @@
 	$user = $_SESSION['user'];
 	?>
 	<body>
-		<h2>Home Page</h2>
-		<p>Hello <?php Print "$user"?>!</p> <!--Displays user's name-->
-		<a href="logout.php">Click here to logout</a><br/><br/>
-		<form action="add.php" method="POST">
-			Add more to list:<input type ="text" name="details"/><br/>
-			public post? <input type="checkbox" name="public[]" value="yes"/><br/>
-			<input type="submit" value ="Add to list" />
-		</form>
-		<h2 align="center">My list</h2>
-		<table border="1px" width="100%">
-			<tr>
-				<th>ID</th>
-				<th>Details</th>
-				<th>Edit</th>
-				<th>Delete</th>
-			</tr>
-			<?php
-				$con=mysqli_connect("localhost","root","");
-				mysqli_select_db($con,"first_db");
-				$query = mysqli_query($con,"SELECT * FROM list");
-				while($row= mysqli_fetch_array($query))
-					{
-						Print "<tr>";
-						Print '<td align="center">'. $row['id'] ."</td>";
-						Print '<td align="center">'. $row['details'] ."</td>";
-						Print '<td align="center">'. $row['date_posted']. " - ". $row['time_posted'] . "</td>";
-						Print '<td align="center">'. $row['date_edited']. " - ".$row['time_edited']. "</td>";
-						Print '<td align="center"><a href="#" onclick="editFunction('.$row['id'].')">edit</a></td>';
-						Print '<td align="center"><a href="#" onclick="myFunction('.$row['id'].')">delete</a></td>';
+	<h2>Team Page</h2>
+	<table border="1px" width="100%">
+		<tr>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Email</th>
+			<th>PostCode</th>
+		<tr>
+	<?php
+	include('connect.php');
+	$db = new MySQLDatabase();
+	$db->connect("challenger");
+	$query =mysqli_query($db->link,"SELECT firstname, lastname, email, postcode FROM users AS used, (SELECT user_id FROM team_members AS ts, (SELECT t.team_id FROM team_members AS t,(SELECT user_id FROM users WHERE username = ('$user')) AS u WHERE t.user_id=u.user_id) AS td WHERE ts.team_id =td.team_id) AS other WHERE used.user_id=other.user_id ");
+	while($row=mysqli_fetch_array($query))
+	{
+		Print "<tr>";
+						Print '<td align="center">'. $row['firstname'] ."</td>";
+						Print '<td align="center">'. $row['lastname'] ."</td>";
+						Print '<td align="center">'. $row['email'] ."</td>";
+						Print '<td align="center">'. $row['postcode']."</td";
 						Print "</tr>";
-					}
-			?>
-		</table>
-		<script>
-			function editFunction(id)
-			{
-				window.location.assign("edit.php?id="+id);
-			
-			}
-			function myFunction(id)
-			{
-				var r=confirm("Are you sure you want to delete this record?");
-				if (r==true)
-				{
-					window.location.assign("delete.php?id="+id);
-				}
-			}
-		</script>
+
+	}
+	?>
+	</table>
+
 	</body>
 </html>

@@ -12,7 +12,7 @@ $db->connect("challenger");
   }
   $password = $_POST['pass'];
   $firstname = $_POST['name'];
-  $lastname = $_POST['name'];
+  $lastname = $_POST['last'];
   $email = $_POST['em'];
   $postcode = $_POST['post'];
   $bool = true;
