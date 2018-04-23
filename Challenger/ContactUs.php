@@ -45,4 +45,53 @@
           </ul>
         </div>
       </nav>
+      <section id="page-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm text">
+              <h1 align="center">Contact Us</h1>
+              <p>If you have any feedback you want to send us or if you have some kind of issue/question then please fill out the form below</p>
+              <p>If you have an urgent request (e.g. Something has happened in the game you are currently playing and you need an immediate response) then call us on 0400 000 000.</p>
+              <p>If you have a less urgent enquiry then feel free to email us at Challenger@gmail.com or fill out the Contact Form.</p>
+              <p><strong>Contact Form</strong></p>
+              <div class="form">
+                <form name="contactform" method="post" action="form_email.php">
+                  <table width="450px">
+                    <tr>
+                      <td valign="top">
+                        <label for="first_name">Name *</label>
+                      </td>
+                      <td valign="top">
+                        <input  type="text" name="name" maxlength="50" size="30">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top">
+                        <label for="email">Email Address *</label>
+                      </td>
+                      <td valign="top">
+                        <input  type="text" name="email" maxlength="80" size="30">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top">
+                        <label for="comments">Comments *</label>
+                      </td>
+                      <td valign="top">
+                        <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="text-align:center">
+                        <input type="submit" value="Submit">
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </body>

@@ -48,7 +48,7 @@
       <section id="page-content">
         <div class="container">
           <div class="row">
-            <div class="col-sm text">
+            <div class="col-sm">
               <h1 align="center">About Us</h1>
               <p>We are a bunch of sports enthusiasts who wanted to make an easy way to make it possible to find casual games of sports!</p>
               <p>After looking around at social competitions and finding that the sign up fees were rather expensive, we decided why not make a free sports competiton that is run by the players!</p>
