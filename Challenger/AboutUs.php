@@ -3,6 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/INFS3202/Challenger/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -19,7 +20,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/INFS3202/Challenger/Rules.php">Rules</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="/INFS3202/Challenger/AboutUs.php">About Us</a>
                 </li>
                 <li class="nav-item">
@@ -28,11 +29,11 @@
                 </ul>
         </div>
           <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="#">Challenger</a>
+            <a class="navbar-brand mx-auto" href="/INFS3202/Challenger/home.php">Challenger</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-              <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
-          </div>
+        </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
@@ -44,10 +45,18 @@
           </ul>
         </div>
       </nav>
-      <section id="page-content" class="content-single-sidebar">
-        <div class="clearfix">
-          <h1 align="center">About Us<h1>
-        <p>We are a group that</p>
+      <section id="page-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm text">
+              <h1 align="center">About Us</h1>
+              <p>We are a bunch of sports enthusiasts who wanted to make an easy way to make it possible to find casual games of sports!</p>
+              <p>After looking around at social competitions and finding that the sign up fees were rather expensive, we decided why not make a free sports competiton that is run by the players!</p>
+              <p>That's what challenger is, we provide the platform for you to create a team and challenge other teams for all the bragging rights!</p>
+              <p>If you have any questions or suggestions please send us a message through our <a href="/INFS3202/Challenger/ContactUs.php">Contact</a> page!</p>
+              <p>We hope you have fun, get playing!</p>
+            </div>
+          </div>
         </div>
       </section>
     </body>

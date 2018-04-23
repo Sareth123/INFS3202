@@ -1,3 +1,8 @@
-.nav {
-	onClick: Green;
+a.selected {
+  color: red;
+  background: #efefef;
+}
+
+.text {
+	text-align: center;
 }
