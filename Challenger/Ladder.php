@@ -11,6 +11,15 @@
     </head>
 
     <body>
+      <?php
+  session_start();//starts the session
+  if($_SESSION['user']){//checks if user is logged in
+  }
+  else{
+    header("location:index.php"); //redirects if user is not logged in
+  }
+  $user = $_SESSION['user'];
+  ?>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
@@ -45,5 +54,32 @@
           </ul>
         </div>
       </nav>
-    </body>
-      
+
+  <h2>ladder</h2>
+  <table border="1px" width="100%">
+    <tr>
+      <th>Team Name</th>
+      <th>Wins</th>
+      <th>Losses</th>
+    <tr>
+
+  <?php
+  include('connect.php');
+  $db = new MySQLDatabase();
+  $db->connect("challenger");
+
+  $query=mysqli_query($db->link,"SELECT * FROM teams");
+  while ($row=mysqli_fetch_array($query))
+    {
+       Print "<tr>";
+            Print '<td align="center">'. $row['name'] ."</td>";
+            Print '<td align="center">'. $row['wins'] ."</td>";
+            Print '<td align="center">'. $row['losses'] ."</td>";
+            Print "</tr>";
+}
+    ?>
+  </table>
+
+  
+  </body>
+</html>
