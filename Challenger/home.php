@@ -92,6 +92,33 @@
 	?>
 	</table>
 	<h2>Next Match</h2>
+	<table border="1px" width "100%">
+		<tr>
+			<th>Versing</th>
+			<th>Location</th>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Stats</th>
+		</tr>
+
+	<?php
+	$query2= mysqli_query($db->link,"SELECT t.name,l.loc_name, c.date, c.time, t.wins, t.losses
+FROM teams AS t, team_members AS tm, users AS u, locations AS l, challenges AS c
+WHERE u.username=('$user') AND u.user_id = tm.user_id AND c.loc_id=l.loc_id AND
+IF(tm.team_id= c.team2_id,  c.team1_id =t.team_id,c.team2_id=t.team_id)");
+	while ($row2=mysqli_fetch_array($query2))
+	{
+		Print "<tr>";
+						Print '<td align="center">'. $row2['name'] ."</td>";
+						Print '<td align="center">'. $row2['loc_name'] ."</td>";
+						Print '<td align="center">'. $row2['date'] ."</td>";
+						Print '<td align="center">'. $row2['time'] ."</td>";
+						Print '<td align="center">'. "Wins: ".$row2['wins'] ." Losses: ".$row2['losses']."</td>";
+						Print "</tr>";
+
+	}
+	?>
+	</table>
 	<h2>Previous Matches</h2>
 
 	</body>
