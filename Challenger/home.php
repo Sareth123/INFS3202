@@ -104,7 +104,7 @@
 	<?php
 	$query2= mysqli_query($db->link,"SELECT t.name,l.loc_name, c.date, c.time, t.wins, t.losses
 FROM teams AS t, team_members AS tm, users AS u, locations AS l, challenges AS c
-WHERE u.username=('$user') AND u.user_id = tm.user_id AND c.loc_id=l.loc_id AND
+WHERE u.username=('$user') AND u.user_id = tm.user_id AND c.loc_id=l.loc_id AND c.date>=CURDATE() AND
 IF(tm.team_id= c.team2_id,  c.team1_id =t.team_id,c.team2_id=t.team_id)");
 	while ($row2=mysqli_fetch_array($query2))
 	{
@@ -120,6 +120,40 @@ IF(tm.team_id= c.team2_id,  c.team1_id =t.team_id,c.team2_id=t.team_id)");
 	?>
 	</table>
 	<h2>Previous Matches</h2>
+	<table border="1px" width "100%">
+		<tr>
+			<th>Versing</th>
+			<th>Location</th>
+			<th>Date</th>
+			<th>Outcome</th>
+		</tr>
+	<?php
+		$query3= mysqli_query($db->link,"SELECT t.name,l.loc_name, c.date, 
+				CASE
+					WHEN c.team1_id!=t.team_id THEN c.t1_score-c.t2_score
+   					WHEN c.team1_id=t.team_id THEN c.t2_score-c.t1_score
+    			END AS result
+		FROM teams AS t, team_members AS tm, users AS u, locations AS l, challenges AS c
+		WHERE u.username=('$user') AND u.user_id = tm.user_id AND c.loc_id=l.loc_id AND c.date<CURDATE() AND
+		IF(tm.team_id= c.team2_id,  c.team1_id =t.team_id ,c.team2_id=t.team_id)");
+		while ($row3=mysqli_fetch_array($query3))
+	{	
+		Print "<tr>";
+						Print '<td align="center">'. $row3['name'] ."</td>";
+						Print '<td align="center">'. $row3['loc_name'] ."</td>";
+						Print '<td align="center">'. $row3['date'] ."</td>";
+						if($row3['result']>0){
 
+						Print '<td align="center">'. "WON" ."</td>";
+					} else if ($row3['result']<0){
+						Print '<td align="center">'. "LOST" ."</td>";
+					}
+					else { Print '<td align="center">'. "TIE" ."</td>";
+					} 
+						Print "</tr>";
+
+	}
+	?>
+	</table>
 	</body>
 </html>
