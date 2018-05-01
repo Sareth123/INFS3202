@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 		    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
 		        <ul class="navbar-nav mr-auto">
 		            <li class="nav-item">
@@ -45,16 +45,12 @@
 		        </ul>
 		    </div>
 		</nav>
-        <?php
-            echo "<h1 align='center'>Challenger!</h1>";
-        ?>
+        <h1 align='center'>Challenger!</h1>
         <div align="center">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="login">Login</button>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="register">Register</button>
         </div>
-        <?php
-        echo "</br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>"
-        ?>
+		</br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
     </body>
     <br/>
        <div class="modal fade" id="content" tabindex="-1" role="dialog">
