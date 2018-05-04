@@ -25,7 +25,7 @@
   if($bool) // checks if bool is true
   {
     mysqli_query($db->link,"INSERT INTO users (username, password, firstname, lastname, email, postcode) VALUES ('$username',PASSWORD('$password'),'$firstname','$lastname','$email','$postcode')"); //Inserts the value to table users
-    mysqli_query($db->link,"INSERT INTO team_members (team_id, user_id) SELECT team_id,user_id FROM teams, users WHERE team_id=('$code') AND username =('$username')");
+    mysqli_query($db->link,"INSERT INTO team_members (team_id, user_id) SELECT team_id,user_id FROM teams, users WHERE code=('$code') AND username =('$username')");
 
     echo"Success";
     session_destroy();

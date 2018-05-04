@@ -60,13 +60,13 @@
     console.log(dataString);
     $.ajax({
       type:"POST",
-      url:"/Challenger/checkregister.php",
+      url:"checkregister.php",
       data:dataString,
       success: function(html) {
         if(html.includes('Success')){
           alert(html);
            $("#register_body").remove();
-          $("#body").load("/Challenger/jointeam.php");
+          $("#body").load("jointeam.php");
         }{
       alert(html);
       }
