@@ -42,7 +42,8 @@
 		Print "<td>".$row['loc_name']."</td>";
 		Print "<td>".$row['date']."</td>";
 		Print "<td>".$row['t1_score'].'-'.$row['t2_score']."</td>";
-		Print "<td button type='button' class='btn btn-primary'>"."Update"."</td>";
+		Print "<td button type='button' class='btn btn-primary
+		'>"."Update"."</td>";
 	Print "</tr>";
 	}
 

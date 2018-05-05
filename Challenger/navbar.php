@@ -5,7 +5,7 @@
 		    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
 		        <ul class="navbar-nav mr-auto">
 		            <li class="nav-item">
-		                <a class="nav-link" href="Ladder.php">Ladder</a>
+		                <a class="nav-link" href="/INFS3202/Challenger/Ladder.php">Ladder</a>
 		            </li>
 		            <li class="nav-item">
 		                <a class="nav-link" href="/INFS3202/Challenger/Rules.php">Rules</a>

@@ -35,13 +35,13 @@
     console.log(dataString);
     $.ajax({
       type:"POST",
-      url:"checkregister.php",
+      url:"/Challenger/checkregister.php",
       data:dataString,
       success: function(html) {
         if(html.includes('Success')){
           alert(html);
            $("#register_body").remove();
-          $("#body").load("newteam.php");
+          $("#body").load("/Challenger/newteam.php");
         }{
       alert(html);
       }
