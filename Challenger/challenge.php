@@ -24,32 +24,59 @@
 	include('connect.php');
 	$db = new MySQLDatabase();
 	$db->connect("challenger");
-	$team_name=$_GET['name'];
-	require_once 'C:/Users/Grant/Desktop/google-api-php-client/vendor/autoload.php';
-
+	
 	?>
-	<script>
-	$(document).ready(function(){
-   $.ajax({
-        url:'php_File_with_php_code.php',
-        type:'GET', 
-        data:"parameter=some_parameter",
-       success:function(data)
-       {
-              $("#thisdiv").html(data);
-           }
-    });
-});
-</script>
-<div id="thisdiv"></div>
+	
 
 
 	<h2>Challenge</h2>
-	<h3>Previous Matches</h3>
-	<p>Wins, Losses</p>
-	<p>Points, Against, Difference</p>
-	<table>
+	
+		<?php
+		$team_name=$_GET['name'];
+		include ('matches.php');
+		while ($row=mysqli_fetch_array($query))
+	{	
+		Print '<h3>'."Last Match"."</h3>";
+	if($row['result']>0){
 
-	</table>
+						$a="won";
+					} else if ($row['result']<0){
+						$a="lost";
+					}
+					else { $a="tied";
+					} ;
+		 Printf("Last match against: ".'%s'." on the ".'%s'." and ".'%s',$row['name'],$row['d'],$a);
+		 echo '</br>';
+
+	};
+	while ($row1=mysqli_fetch_array($query1))
+		{
+			Printf("Total Wins: ".'%s'." Total Losses: ".'%s',$row1['wins'],$row1['losses']);
+		}
+	?>
+	<p>Points, Against, Difference</p>
+			<form action="adding.php" method="POST">
+           Enter Date: <input type="date" name="username" required="required" /> <br/><br/>
+           Enter Time: <input type="time" name="password" required="required" /> <br/><br/>
+           
+           
+<?php
+
+	$query=mysqli_query($db->link,"SELECT loc_id, loc_name FROM locations");
+	print "<select>";
+	while ($row=mysqli_fetch_array($query))
+		{
+			printf("<option value='%s'>".'%s'."</option>",$row['loc_id'],$row['loc_name']);
+		}
+		
+    print "</select>";
+          ?>
+			
+			
+     </form>
+ 
+   	
+   
+  <br><br>
 	</body>
 </html>
