@@ -28,8 +28,10 @@
   include('connect.php');
   $db = new MySQLDatabase();
   $db->connect("challenger");
-
+  $user = $_SESSION['user'];
   $query=mysqli_query($db->link,"SELECT * FROM teams");
+  $query1 = mysqli_query($db->link,"SELECT t.name FROM team_members AS tm, users AS u, teams AS t WHERE t.team_id=tm.team_id AND tm.user_id=u.user_id AND u.username=('$user')");
+  $row1=mysqli_fetch_assoc($query1);
   while ($row=mysqli_fetch_array($query))
     {
        Print "<tr>";
@@ -37,7 +39,10 @@
             Print '<td align="center">'. $row['wins'] ."</td>";
             Print '<td align="center">'. $row['losses'] ."</td>";
             Print '<td align="center">'."</td>";
+            if($row['name']!=$row1['name']){
             Printf('<td button type="button" class="btn btn-primary" align="center" onClick="challenge(\'%s\');">'."Challenge".'</td>',$row['name']);
+          }
+
             Print "</tr>";
 }
     ?>
