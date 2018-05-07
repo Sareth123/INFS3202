@@ -56,11 +56,21 @@
 		            </li>
 		        </ul>
 		    </div>
-		    <div class="mx-auto order-0">
+		    <div class="mx-auto">
 		        <a class="navbar-brand mx-auto" href="/INFS3202/Challenger/home.php">Challenger</a>
 		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 		            <span class="navbar-toggler-icon"></span>
 		        </button>
+		    </div>
+		    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+		        <ul class="navbar-nav ml-auto">
+		            <li class="px-2">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="login">Login</button>
+					</li>
+		            <li>
+            			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="register">Register</button>
+		            </li>
+		        </ul>
 		    </div>
 		</nav>
 	<?php } 

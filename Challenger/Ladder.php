@@ -12,14 +12,8 @@
 
     <body>
       <?php
-  include('navbar.php');//starts the session
-  if($_SESSION['user']){//checks if user is logged in
-  }
-  else{
-    header("location:index.php"); //redirects if user is not logged in
-  }
-  $user = $_SESSION['user'];
-  ?>
+      include('navbar.php');
+      ?>
   <h2>ladder</h2>
   <table border="1px" width="100%">
     <tr>
