@@ -13,6 +13,9 @@
     <body>
       
 	<?php
+	$str=explode('/','30/04/2011');
+	$strd=$str[0]."-".$str[1]."-".$str[2];
+	echo date("Y-m-d",strtotime($strd));
 	include('navbar.php');
 	///ADD CHECK
 	if($_SESSION['user']){//checks if user is logged in
@@ -24,6 +27,7 @@
 	include('connect.php');
 	$db = new MySQLDatabase();
 	$db->connect("challenger");
+	
 	?>
 	
 
@@ -31,7 +35,8 @@
 	<h2>Challenge</h2>
 	
 		<?php
-		$team_name=$_GET['name'];
+		$other_team=$_GET['name'];
+		$_SESSION['other']=$other_team;
 		include ('matches.php');
 		while ($row=mysqli_fetch_array($query))
 	{	
@@ -55,23 +60,20 @@
 	?>
 	<p>Points, Against, Difference</p>
 			<form action="adding.php" method="POST">
-           Enter Date: <input type="date" name="username" required="required" /> <br/><br/>
-           Enter Time: <input type="time" name="password" required="required" /> <br/><br/>
+           Enter Date: <input type="date" name="date" required="required" /> <br/><br/>
+           Enter Time: <input type="time" name="time" required="required" /> <br/><br/>
            
-           
-<?php
+           <select name="location">
 
+	<?php
 	$query=mysqli_query($db->link,"SELECT loc_id, loc_name FROM locations");
-	print "<select>";
 	while ($row=mysqli_fetch_array($query))
 		{
 			printf("<option value='%s'>".'%s'."</option>",$row['loc_id'],$row['loc_name']);
 		}
-		
-    print "</select>";
-          ?>
-			
-			
+		?>
+			</select>
+			<input type="submit" class="btn btn-primary" value="submit"/>
      </form>
  
    	
