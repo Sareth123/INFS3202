@@ -32,6 +32,9 @@
 		            <li class="nav-item">
 		                <a class="nav-link" href="/INFS3202/Challenger/Team.php">Team</a>
 		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="/INFS3202/Challenger/logout.php">Logout</a>
+		            </li>
 		        </ul>
 		    </div>
 		</nav>
