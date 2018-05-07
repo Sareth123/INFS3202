@@ -14,6 +14,9 @@
 		                <a class="nav-link" href="/INFS3202/Challenger/AboutUs.php">About Us</a>
 		            </li>
 		            <li class="nav-item">
+		                <a class="nav-link" href="/INFS3202/Challenger/Locations.php">Locations</a>
+		            </li>
+		            <li class="nav-item">
 		                <a class="nav-link" href="/INFS3202/Challenger/ContactUs.php">Contact Us</a>
 		            </li>
 		        </ul>
@@ -50,6 +53,9 @@
 		            </li>
 		            <li class="nav-item">
 		                <a class="nav-link" href="/INFS3202/Challenger/AboutUs.php">About Us</a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="/INFS3202/Challenger/Locations.php">Locations</a>
 		            </li>
 		            <li class="nav-item">
 		                <a class="nav-link" href="/INFS3202/Challenger/ContactUs.php">Contact Us</a>

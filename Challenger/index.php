@@ -2,7 +2,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Challenger</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,6 +19,36 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="register">Register</button>
         </div>
 		</br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
+    <footer class="bg-dark text-light">
+        <div class="container">
+            <div class="row">
+            <div class="col l4 s12">
+                <h5>Contact Us</h5>
+                <ul>
+                <li><span>Brisbane, Australia</span></li>
+                <li><span>info@challenger.com</span></li>
+                <li><span>+61 412 345 678</span></li>
+                </ul>
+            </div>
+
+            <div class="col l4 s12">
+                <h5>Social Media</h5>
+                <ul class="d-inline-flex">
+                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+            © Copyright Challenger 2018
+            <a class="black-text right" href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
     </body>
     <br/>
        <div class="modal fade" id="content" tabindex="-1" role="dialog">
