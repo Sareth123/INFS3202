@@ -13,7 +13,6 @@
     <body>
     <?php
       include('navbar.php');
-      $user = $_SESSION['user'];
     ?>
       <section id="page-content">
         <div class="container">

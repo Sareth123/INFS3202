@@ -13,12 +13,6 @@
     <body>
     	<?php
       include('navbar.php');
-      if($_SESSION['user']){//checks if user is logged in
-        header("location:home.php"); //redirects if user is logged in
-      }
-      else{
-      }
-      $user = $_SESSION['user'];
       ?>
         <h1 align='center'>Challenger!</h1>
         <div align="center">
