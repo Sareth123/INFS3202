@@ -13,7 +13,8 @@
     <body>
     	<?php
       include('navbar.php');
-      ?>
+      $user = $_SESSION['user'];
+      	?>
         <h1 align='center'>Challenger!</h1>
         <div align="center">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="login">Login</button>

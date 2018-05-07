@@ -24,7 +24,6 @@
 	include('connect.php');
 	$db = new MySQLDatabase();
 	$db->connect("challenger");
-	
 	?>
 	
 
