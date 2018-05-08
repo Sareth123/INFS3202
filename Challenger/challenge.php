@@ -13,9 +13,6 @@
     <body>
       
 	<?php
-	$str=explode('/','30/04/2011');
-	$strd=$str[0]."-".$str[1]."-".$str[2];
-	echo date("Y-m-d",strtotime($strd));
 	include('navbar.php');
 	///ADD CHECK
 	if($_SESSION['user']){//checks if user is logged in
