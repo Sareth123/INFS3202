@@ -33,7 +33,7 @@ function adding()
     console.log(dataString);
     $.ajax({
       type:"POST",
-      url:"checknewteam.php",
+      url:"php/checknewteam.php",
       data:dataString,
       success: function(html) {
         if(html=='Success'){

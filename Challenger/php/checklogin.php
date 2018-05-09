@@ -22,13 +22,13 @@
        if(($username == $table_users))// checks if there are any matching fields
        {
              $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
-             header("location: home.php"); // redirects the user to the authenticated home page
+             header("location: ../home.php"); // redirects the user to the authenticated home page
        }
        else
        {
         
         Print '<script>alert("Incorrect Password!");</script>'; // Prompts the user
-        Print '<script>window.location.assign("index.php");</script>'; // redirects to login.php
+        Print '<script>window.location.assign("../index.php");</script>'; // redirects to login.php
        }
     }
     else if($r_exists>0)
@@ -41,19 +41,19 @@
        if(($username == $table_users))// checks if there are any matching fields
        {
              $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
-             header("location: referee.php"); // redirects the user to the authenticated home page
+             header("location: ../referee.php"); // redirects the user to the authenticated home page
        }
        else
        {
         
         Print '<script>alert("Incorrect Password!");</script>'; // Prompts the user
-        Print '<script>window.location.assign("index.php");</script>'; // redirects to login.php
+        Print '<script>window.location.assign("../index.php");</script>'; // redirects to login.php
        }
 
       }
     else
     {
         Print '<script>alert("No Users");</script>'; // Prompts the user
-        Print '<script>window.location.assign("index.php");</script>'; // redirects to login.php
+        Print '<script>window.location.assign("../index.php");</script>'; // redirects to login.php
     }
 ?>

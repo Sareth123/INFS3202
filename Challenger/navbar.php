@@ -8,16 +8,16 @@
 		                <a class="nav-link" href="Ladder.php">Ladder</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/Rules.php">Rules</a>
+		                <a class="nav-link" href="Rules.php">Rules</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/AboutUs.php">About Us</a>
+		                <a class="nav-link" href="AboutUs.php">About Us</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/Locations.php">Locations</a>
+		                <a class="nav-link" href="Locations.php">Locations</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/ContactUs.php">Contact Us</a>
+		                <a class="nav-link" href="ContactUs.php">Contact Us</a>
 		            </li>
 		        </ul>
 		    </div>
@@ -30,13 +30,13 @@
 		    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 		        <ul class="navbar-nav ml-auto">
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/Profile.php">Profile</a>
+		                <a class="nav-link" href="Profile.php">Profile</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/Team.php">Team</a>
+		                <a class="nav-link" href="Team.php">Team</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/logout.php">Logout</a>
+		                <a class="nav-link" href="php/logout.php">Logout</a>
 		            </li>
 		        </ul>
 		    </div>
@@ -46,28 +46,33 @@
 		    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
 		        <ul class="navbar-nav mr-auto">
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/Ladder.php">Ladder</a>
+		                <a class="nav-link" href="Ladder.php">Ladder</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/Rules.php">Rules</a>
+		                <a class="nav-link" href="Rules.php">Rules</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/AboutUs.php">About Us</a>
+		                <a class="nav-link" href="AboutUs.php">About Us</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/Locations.php">Locations</a>
+		                <a class="nav-link" href="Locations.php">Locations</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="/INFS3202/Challenger/ContactUs.php">Contact Us</a>
+		                <a class="nav-link" href="ContactUs.php">Contact Us</a>
 		            </li>
 		        </ul>
 		    </div>
 		    <div class="mx-auto">
-		        <a class="navbar-brand mx-auto" href="/INFS3202/Challenger/home.php">Challenger</a>
+		        <a class="navbar-brand mx-auto" href="home.php">Challenger</a>
 		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 		            <span class="navbar-toggler-icon"></span>
 		        </button>
 		    </div>
+		    <div>
+		    	<?php
+		    	include("login&register.php");
+		    	?>
+		   	</div>
 		    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 		        <ul class="navbar-nav ml-auto">
 		            <li class="px-2">

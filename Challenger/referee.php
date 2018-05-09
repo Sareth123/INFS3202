@@ -31,7 +31,7 @@
 			<th></th>
 		</tr>
 		<?php
-	include('connect.php');
+	include('php/connect.php');
 	$db = new MySQLDatabase();
 	$db->connect("challenger");
 	$query = mysqli_query($db->link,"SELECT t1.name, t2.name AS t, l.loc_name, c.date, c.t1_score, c.t2_score FROM challenges AS c, teams AS t1, teams AS t2, locations AS l WHERE team1_id=t1.team_id AND team2_id=t2.team_id AND c.loc_id=l.loc_id AND c.date<CURDATE()");

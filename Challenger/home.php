@@ -26,7 +26,7 @@
 	<div id="stats">
 
 	<?php
-	include('connect.php');
+	include('php/connect.php');
 	$db = new MySQLDatabase();
 	$db->connect("challenger");
 

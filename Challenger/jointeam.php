@@ -26,7 +26,7 @@ function join()
     console.log(dataString);
     $.ajax({
       type:"POST",
-      url:"checkjoin.php",
+      url:"php/checkjoin.php",
       data:dataString,
       success: function(html) {
         if(html=='Success'){
