@@ -29,11 +29,11 @@
 			$bool=false;
 			
 			Print '<script>alert("Can not choose this date!");</script>'; // Prompts the user
-        		Print '<script>window.location.assign("ladder.php");</script>'; // redirects to login.php
+        		Print '<script>window.location.assign("../ladder.php");</script>'; // redirects to login.php
 
 		}else{
 	mysqli_query($db->link,"INSERT INTO challenges (team1_id, team2_id, loc_id, date, time,t1_score,t2_score) VALUES ('$o_team_id','$u_team_id','$location','$date','$time','0','0')");
-	header('location:ladder.php');
+	header('location:../ladder.php');
 }
 	
 ?>

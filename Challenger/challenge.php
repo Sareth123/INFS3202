@@ -21,7 +21,7 @@
 		header("location:index.php"); //redirects if user is not logged in
 	}
 	$user = $_SESSION['user'];
-	include('connect.php');
+	include('./php/connect.php');
 	$db = new MySQLDatabase();
 	$db->connect("challenger");
 	
@@ -56,7 +56,7 @@
 		}
 	?>
 	<p>Points, Against, Difference</p>
-			<form action="adding.php" method="POST">
+			<form action="php/checkchallenge.php" method="POST">
            Enter Date: <input type="date" name="date" required="required" /> <br/><br/>
            Enter Time: <input type="time" name="time" required="required" /> <br/><br/>
            
