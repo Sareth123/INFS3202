@@ -13,12 +13,51 @@
     	<?php
       include('navbar.php');
       ?>
-        <h1 align='center'>Challenger!</h1>
-        <div align="center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="login">Login</button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="register">Register</button>
+      <section id="page-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm text">
+              <h1 align='center'>Challenger!</h1>
+              <div align="center">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="login">Login</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="register">Register</button>
+              </div>
+      		    </br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
+              <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets\TRL_1.jpg" alt="Touch Rugby League">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets\TRL_2.jpg" alt="Touch Rugby League">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets\TRL_3.jpg" alt="Touch Rugby League">
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+
+              </div>
+            </div>
+          </div>
         </div>
-		</br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
+      </section>
     <footer class="bg-dark text-light">
         <div class="container">
             <div class="row">
