@@ -27,42 +27,61 @@
               <p>If you have any feedback you want to send us or if you have some kind of issue/question then please fill out the form below</p>
               <p>If you have an urgent request (e.g. Something has happened in the game you are currently playing and you need an immediate response) then call us on 0400 000 000.</p>
               <p>If you have a less urgent enquiry then feel free to email us at Challenger@gmail.com or fill out the Contact Form.</p>
-              <p><strong>Contact Form</strong></p>
-              <div class="form">
-                <form name="contactform" method="post" action="form_email.php">
-                  <table width="450px">
-                    <tr>
-                      <td valign="top">
-                        <label for="first_name">Name *</label>
-                      </td>
-                      <td valign="top">
-                        <input  type="text" name="name" maxlength="50" size="30">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td valign="top">
-                        <label for="email">Email Address *</label>
-                      </td>
-                      <td valign="top">
-                        <input  type="text" name="email" maxlength="80" size="30">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td valign="top">
-                        <label for="comments">Comments *</label>
-                      </td>
-                      <td valign="top">
-                        <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2" style="text-align:center">
-                        <input type="submit" value="Submit">
-                      </td>
-                    </tr>
-                  </table>
-                </form>
-              </div>
+              <form id="contact-form" method="post" action="form_email.php" role="form">
+              <h3>Contact Form</h3>
+                <div class="messages"></div>
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Firstname *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter your firstname *" required="required" data-error="Firstname is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_lastname">Lastname *</label>
+                                <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Enter your lastname *" required="required" data-error="Lastname is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_email">Email *</label>
+                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Enter your email *" required="required" data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_phone">Phone (optional)</label>
+                                <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Enter your phone">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_message">Message *</label>
+                                <textarea id="form_message" name="message" class="form-control" placeholder="Message *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-success btn-send" value="Send message">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-muted"><strong>*</strong> These fields are required.</p>
+                        </div>
+                    </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>

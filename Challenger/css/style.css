@@ -15,10 +15,7 @@ div.form
 
 form
 {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
+  background-color: #d2d2e0 !important;
 }
 
 body {
@@ -58,3 +55,4 @@ footer {
     background-color: grey;
     margin: auto;
 }
+
