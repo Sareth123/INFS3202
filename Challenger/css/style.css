@@ -22,6 +22,7 @@ form
 }
 
 body {
+  background-color: #cce6ff !important;
   position: relative;
   margin: 0;
   padding-bottom: 150px;
