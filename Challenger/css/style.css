@@ -21,10 +21,23 @@ form
     text-align: left;
 }
 
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 150px;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
+    right: 0;
     width: 100%;
 }
 

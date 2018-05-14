@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
         <title>Challenger</title>
     </head>
 
@@ -19,6 +20,10 @@
           <div class="row">
             <div class="col-sm text">
               <h1 align="center">Contact Us</h1>
+              <p>We are a bunch of sports enthusiasts who wanted to make an easy way to make it possible to find casual games of sports!</p>
+              <p>After looking around at social competitions and finding that the sign up fees were rather expensive, we decided why not make a free sports competiton that is run by the players!</p>
+              <p>That's what challenger is, we provide the platform for you to create a team and challenge other teams for all the bragging rights!</p>
+              <p>We hope you have fun, get playing!</p>
               <p>If you have any feedback you want to send us or if you have some kind of issue/question then please fill out the form below</p>
               <p>If you have an urgent request (e.g. Something has happened in the game you are currently playing and you need an immediate response) then call us on 0400 000 000.</p>
               <p>If you have a less urgent enquiry then feel free to email us at Challenger@gmail.com or fill out the Contact Form.</p>
@@ -62,35 +67,8 @@
           </div>
         </div>
       </section>
-      <footer class="bg-dark text-light">
-        <div class="container">
-            <div class="row">
-            <div class="col l4 s12">
-                <h5>Contact Us</h5>
-                <ul>
-                <li><span>Brisbane, Australia</span></li>
-                <li><span>info@challenger.com</span></li>
-                <li><span>+61 412 345 678</span></li>
-                </ul>
-            </div>
-
-            <div class="col l4 s12">
-                <h5>Social Media</h5>
-                <ul class="d-inline-flex">
-                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div>
-            <div class="container">
-            © Copyright Challenger 2018
-            <a class="black-text right" href="#">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
-
+      <?php
+      include('footer.php');
+      ?>
     </body>
+</html>
