@@ -1,4 +1,4 @@
-<html>
+﻿<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +16,11 @@
         <h1 align='center'>Challenger!</h1>
         
 		</br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
+<?php
+include('quickstart.php');
+?>
+
+
     <footer class="bg-dark text-light">
         <div class="container">
             <div class="row">
