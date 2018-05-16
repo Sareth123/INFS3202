@@ -14,32 +14,19 @@
     	<?php
       include('navbar.php');
       ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <h1 align='center'>Challenger!</h1>
-        
-		</br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
-<?php
-include('quickstart.php');
-?>
-
 
     <footer class="bg-dark text-light">
-=======
+
       <section id="page-content">
->>>>>>> 68428448e3b5a5de6e91d9540efd74f25c501b69
-=======
-      <section id="page-content">
->>>>>>> 68428448e3b5a5de6e91d9540efd74f25c501b69
+
         <div class="container">
           <div class="row">
             <div class="col-sm text">
               <h1 align='center'>Challenger!</h1>
-              <div align="center">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="login">Login</button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#content" id="register">Register</button>
-              </div>
       		    </br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
+              <?php
+              include('quickstart.php');
+              ?>
               <div id="demo" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->

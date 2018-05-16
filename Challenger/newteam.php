@@ -13,7 +13,7 @@
     <!--send email function will be added soon-->
   <div class="email_field">
       <p>Please enter in 5 of team memebers email addresses:</p>
-        <input type="text" name="email" required="required"/><br>
+        <input type="text" name="email" required="required" id="em"/><br>
         <!--<input type="text" name="email2" required="required"/><br>
         <input type="text" name="email3" required="required"/><br>
         <input type="text" name="email4" required="required"/><br>
@@ -29,7 +29,8 @@
 function adding()
 {
     var name = document.getElementById("user").value;
-    var dataString = 'name= '+name+' ';
+    var em=document.getElementById("em").value;
+    var dataString = 'name= '+name+'&email='+email+' ';
     console.log(dataString);
     $.ajax({
       type:"POST",

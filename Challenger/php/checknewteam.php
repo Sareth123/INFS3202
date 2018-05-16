@@ -5,6 +5,7 @@
   $db->connect("challenger");
    
   $name = $_POST['name'];
+  $em=$_POST['email'];
 
   $username = $_SESSION['username'];
   $password = $_SESSION['password'];
@@ -38,7 +39,13 @@
     
     mysqli_query($db->link,"INSERT INTO team_members (team_id, user_id) SELECT team_id,user_id FROM teams, users WHERE name=('$name') AND username =('$username')");
 
+  $to = (string)$em;
+  $subject = "Join Challenger!";
+  $message = "Your friend ".(string)$firstname." ".(string)$lastname."would you like you to Join: ".(string)$name." to join use this code: ".(string)$code;
+  include('send_email.php');
+
     echo"Success";
     session_destroy();
+
   }
 ?>
