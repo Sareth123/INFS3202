@@ -15,6 +15,7 @@
       include('navbar.php');
       ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <h1 align='center'>Challenger!</h1>
         
 		</br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
@@ -24,6 +25,9 @@ include('quickstart.php');
 
 
     <footer class="bg-dark text-light">
+=======
+      <section id="page-content">
+>>>>>>> 68428448e3b5a5de6e91d9540efd74f25c501b69
 =======
       <section id="page-content">
 >>>>>>> 68428448e3b5a5de6e91d9540efd74f25c501b69
