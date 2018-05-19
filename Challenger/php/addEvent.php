@@ -3,29 +3,35 @@
  * @return Google_Client the authorized client object
  */
 <?php
-require_once '/google-api-php-client/vendor/autoload.php';
+include 'error.php';
+date_default_timezone_set("Australia/Brisbane");
+require_once '../google-api-php-client/vendor/autoload.php';
 function getClient()
 {
     $client = new Google_Client();
-    $client->setApplicationName('Google Calendar API PHP Quickstart');
     $client->setScopes(Google_Service_Calendar::CALENDAR);
     $client->setAuthConfig('client_secret.json');
-    $client->setAccessType('offline');
-
+    
     // Load previously authorized credentials from a file.
     $credentialsPath = expandHomeDirectory('credentials.json');
     if (file_exists($credentialsPath)) {
         $accessToken = json_decode(file_get_contents($credentialsPath), true);
     } else {
         // Request authorization from the user.
-        
+        $authUrl = $client->createAuthUrl();
+        printf("Open the following link in your browser:\n%s\n", $authUrl);
+        print 'Enter verification code: ';
         $authCode = trim(fgets(STDIN));
 
+        // Exchange authorization code for an access token.
         $accessToken = $client->fetchAccessTokenWithAuthCode($authCode);
 
         // Store the credentials to disk.
-        
+        if (!file_exists(dirname($credentialsPath))) {
+            mkdir(dirname($credentialsPath), 0700, true);
+        }
         file_put_contents($credentialsPath, json_encode($accessToken));
+        printf("Credentials saved to %s\n", $credentialsPath);
     }
     $client->setAccessToken($accessToken);
 
@@ -54,21 +60,17 @@ function expandHomeDirectory($path)
 // Get the API client and construct the service object.
 $client = getClient();
 $service = new Google_Service_Calendar($client);
-
 $event = new Google_Service_Calendar_Event(array(
-  'summary' => 'Google I/O 2015',
+  'summary' => $g_summary,
   'location' => '800 Howard St., San Francisco, CA 94103',
-  'description' => 'A chance to hear more about Google\'s developer products.',
+  'description' => 'Touch rugby game: '.$g_summary,
   'start' => array(
-    'dateTime' => '2015-05-28T09:00:00-07:00',
-    'timeZone' => 'America/Los_Angeles',
+    'dateTime' => $g_sdt,
+    'timeZone' => 'Australia/Brisbane',
   ),
   'end' => array(
-    'dateTime' => '2015-05-28T17:00:00-07:00',
-    'timeZone' => 'America/Los_Angeles',
-  ),
-  'recurrence' => array(
-    'RRULE:FREQ=DAILY;COUNT=2'
+    'dateTime' => $g_edt,
+    'timeZone' => 'Australia/Brisbane',
   ),
   'attendees' => array(
     array('email' => 'lpage@example.com'),
@@ -83,6 +85,9 @@ $event = new Google_Service_Calendar_Event(array(
   ),
 ));
 
-$calendarId = 'sportchallenger123@gmail.com';
+$calendarId = 'primary';
 $event = $service->events->insert($calendarId, $event);
-printf('Event created: %s\n', $event->htmlLink);
+
+
+
+?>

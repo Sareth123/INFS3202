@@ -16,6 +16,7 @@
       include('navbar.php');
       ?>
   <h2>ladder</h2>
+  <?php include 'quickstart.php'?>
   <table border="1px" width="100%">
     <tr>
       <th>Team Name</th>
