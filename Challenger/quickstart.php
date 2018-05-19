@@ -3,6 +3,8 @@
  * @return Google_Client the authorized client object
  */
 <?php
+include 'error.php';
+date_default_timezone_set("Australia/Brisbane");
 require_once 'google-api-php-client/vendor/autoload.php';
 function getClient()
 {

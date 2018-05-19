@@ -30,7 +30,7 @@ function adding()
 {
     var name = document.getElementById("user").value;
     var em=document.getElementById("em").value;
-    var dataString = 'name= '+name+'&email='+email+' ';
+    var dataString = 'name='+name+'&em='+em+' ';
     console.log(dataString);
     $.ajax({
       type:"POST",

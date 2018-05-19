@@ -5,7 +5,7 @@
   $db->connect("challenger");
    
   $name = $_POST['name'];
-  $em=$_POST['email'];
+  $em=$_POST['em'];
 
   $username = $_SESSION['username'];
   $password = $_SESSION['password'];
