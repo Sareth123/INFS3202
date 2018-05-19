@@ -1,3 +1,4 @@
+<title>Challenger</title>
 <?php
 	session_start();
 	if(isset($_SESSION['user']) ? $_SESSION['user'] : ""){?>
@@ -19,7 +20,7 @@
 		        </ul>
 		    </div>
 		    <div class="mx-auto order-0">
-		        <a class="navbar-brand mx-auto" href="/INFS3202/Challenger/home.php">Challenger</a>
+		        <a class="navbar-brand mx-auto" href="home.php">Challenger</a>
 		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 		            <span class="navbar-toggler-icon"></span>
 		        </button>

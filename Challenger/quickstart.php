@@ -3,13 +3,12 @@
  * @return Google_Client the authorized client object
  */
 <?php
-include 'error.php';
+include 'php/error.php';
 date_default_timezone_set("Australia/Brisbane");
 require_once 'google-api-php-client/vendor/autoload.php';
 function getClient()
 {
     $client = new Google_Client();
-    $client->setApplicationName('Google Calendar API PHP Quickstart');
     $client->setScopes(Google_Service_Calendar::CALENDAR);
     $client->setAuthConfig('client_secret.json');
     $client->setAccessType('offline');

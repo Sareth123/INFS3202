@@ -13,7 +13,10 @@
 
     <body>
       <?php
-      include('navbar.php');
+        include('php/navbar.php');
+        include('php/connect.php');
+        $db = new MySQLDatabase();
+        $db->connect("challenger");
       ?>
   <h2>ladder</h2>
   <?php include 'quickstart.php'?>
@@ -28,27 +31,21 @@
     </tr>
 
   <?php
-  include('php/connect.php');
-  $db = new MySQLDatabase();
-  $db->connect("challenger");
   if(isset($_SESSION['user'])){
-
     $user = $_SESSION['user'];
-    $query1 = mysqli_query($db->link,"SELECT t.name FROM team_members AS tm, users AS u, teams AS t WHERE t.team_id=tm.team_id AND tm.user_id=u.user_id AND u.username=('$user')");
-    $row1=mysqli_fetch_assoc($query1);
-  }else{}
-  
-  $query=mysqli_query($db->link,"SELECT * FROM teams");
-  
-  while ($row=mysqli_fetch_array($query))
+    include 'php/queries.php';
+    $users_team=mysqli_fetch_assoc($team_name);
+  }
+  $teams=mysqli_query($db->link,"SELECT * FROM teams");
+  while ($team=mysqli_fetch_array($teams))
     {
        Print "<tr>";
-            Print '<td align="center">'. $row['name'] ."</td>";
-            Print '<td align="center">'. $row['wins'] ."</td>";
-            Print '<td align="center">'. $row['losses'] ."</td>";
+            Print '<td align="center">'. $team['name'] ."</td>";
+            Print '<td align="center">'. $team['wins'] ."</td>";
+            Print '<td align="center">'. $team['losses'] ."</td>";
             Print '<td align="center">'."</td>";
-            if(isset($_SESSION['user']) &&$row['name']!=$row1['name']){//checks if user is logged in
-            Printf('<td button type="button" class="btn btn-primary" align="center" onClick="challenge(\'%s\');">'."Challenge".'</td>',$row['name']);}else {
+            if(isset($user) && $team['name']!=$users_team['name']){//checks if user is logged in
+            Printf('<td button type="button" class="btn btn-primary" align="center" onClick="challenge(\'%s\');">'."Challenge".'</td>',$team['name']);}else {
             
 }
             Print "</tr>";

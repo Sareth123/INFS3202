@@ -12,7 +12,7 @@
 
     <body>
     	<?php
-      include('navbar.php');
+      include('php/navbar.php');
       ?>
 
     <footer class="bg-dark text-light">

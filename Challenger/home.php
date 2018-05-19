@@ -13,7 +13,10 @@
     <body>
       
 	<?php
-	include('navbar.php');
+	include('php/navbar.php');
+	include('php/connect.php');
+	$db = new MySQLDatabase();
+	$db->connect("challenger");
 	///ADD CHECK
 	if($_SESSION['user']){//checks if user is logged in
 	}
@@ -26,12 +29,8 @@
 	<div id="stats">
 
 	<?php
-	include('php/connect.php');
-	$db = new MySQLDatabase();
-	$db->connect("challenger");
-
-	$query=mysqli_query($db->link,"SELECT wins, losses FROM teams AS t, team_members AS tm, users AS u WHERE u.username=('$user') AND u.user_id=tm.user_id AND tm.team_id=t.team_id");
-	while ($row=mysqli_fetch_array($query))
+	include('php/queries.php');
+	while ($row=mysqli_fetch_array($team_stats))
 		{
 			Print '<p>Wins: '.$row['wins'].' Losses: '.$row['losses']."</p>";
 		}
@@ -46,8 +45,8 @@
 			<th>PostCode</th>
 		<tr>
 	<?php
-		$query1 =mysqli_query($db->link,"SELECT firstname, lastname, email, postcode FROM users AS used, (SELECT user_id FROM team_members AS ts, (SELECT t.team_id FROM team_members AS t,(SELECT user_id FROM users WHERE username = ('$user')) AS u WHERE t.user_id=u.user_id) AS td WHERE ts.team_id =td.team_id) AS other WHERE used.user_id=other.user_id ");
-	while($row1=mysqli_fetch_array($query1))
+		
+	while($row1=mysqli_fetch_array($team_members))
 	{
 		Print "<tr>";
 						Print '<td align="center">'. $row1['firstname'] ."</td>";
@@ -70,11 +69,7 @@
 		</tr>
 
 	<?php
-	$query2= mysqli_query($db->link,"SELECT t.name,l.loc_name, c.date, c.time, t.wins, t.losses
-FROM teams AS t, team_members AS tm, users AS u, locations AS l, challenges AS c
-WHERE u.username=('$user') AND u.user_id = tm.user_id AND c.loc_id=l.loc_id AND c.date>=CURDATE() AND
-IF(tm.team_id= c.team2_id,  c.team1_id =t.team_id,c.team2_id=t.team_id)");
-	while ($row2=mysqli_fetch_array($query2))
+	while ($row2=mysqli_fetch_array($next_match))
 	{
 		Print "<tr>";
 						Print '<td align="center">'. $row2['name'] ."</td>";
@@ -96,15 +91,8 @@ IF(tm.team_id= c.team2_id,  c.team1_id =t.team_id,c.team2_id=t.team_id)");
 			<th>Outcome</th>
 		</tr>
 	<?php
-		$query3= mysqli_query($db->link,"SELECT t.name,l.loc_name, c.date, 
-				CASE
-					WHEN c.team1_id!=t.team_id THEN c.t1_score-c.t2_score
-   					WHEN c.team1_id=t.team_id THEN c.t2_score-c.t1_score
-    			END AS result
-		FROM teams AS t, team_members AS tm, users AS u, locations AS l, challenges AS c
-		WHERE u.username=('$user') AND u.user_id = tm.user_id AND c.loc_id=l.loc_id AND c.date<CURDATE() AND
-		IF(tm.team_id= c.team2_id,  c.team1_id =t.team_id ,c.team2_id=t.team_id)");
-		while ($row3=mysqli_fetch_array($query3))
+		
+		while ($row3=mysqli_fetch_array($previous_matches))
 	{	
 		Print "<tr>";
 						Print '<td align="center">'. $row3['name'] ."</td>";

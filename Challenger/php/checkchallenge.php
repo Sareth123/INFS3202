@@ -15,9 +15,11 @@
     $g_sdt = $date."T".$time;
     $g_edt = $date."T".$etime;
     $location = $_POST['location'];
-	
-   	
 
+    $query8 = mysqli_query($db->link,"SELECT loc_name, address,suburb,state,postcode FROM locations WHERE loc_id='$location'");
+    $rowed=mysqli_fetch_assoc($query8);
+    $loc_name=$rowed['loc_name'];
+	$gloc=$rowed['address'].", ".$rowed['suburb'].", ".$rowed['state']." ".$rowed['postcode'];
 	$query = mysqli_query($db->link,"SELECT tm.team_id, t.name FROM team_members AS tm, users AS u, teams AS t WHERE tm.user_id=u.user_id AND u.username=('$user') AND t.team_id=tm.team_id");
 	$query1 = mysqli_query($db->link,"SELECT team_id, name FROM teams WHERE name=('$other')");
 
@@ -40,7 +42,7 @@
 
 		}else{
 	mysqli_query($db->link,"INSERT INTO challenges (team1_id, team2_id, loc_id, date, time,t1_score,t2_score) VALUES ('$o_team_id','$u_team_id','$location','$date','$time','0','0')");
-	$g_summary=$u_name." vs ".$o_name;
+	$g_summary=$u_name." vs ".$o_name." @".$loc_name;
 	include 'addEvent.php';
 
 	

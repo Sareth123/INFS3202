@@ -13,7 +13,7 @@
     <body>
       
 	<?php
-	include('navbar.php');
+	include('php/navbar.php');
 	///ADD CHECK
 	if($_SESSION['user']){//checks if user is logged in
 	}
@@ -21,56 +21,43 @@
 		header("location:index.php"); //redirects if user is not logged in
 	}
 	$user = $_SESSION['user'];
-	include('./php/connect.php');
-	$db = new MySQLDatabase();
-	$db->connect("challenger");
-	
+	$other_team=$_GET['name'];
+	$_SESSION['other']=$other_team;
+	include('php/queries.php');
 	?>
-	
-
 
 	<h2>Challenge</h2>
-	
-		<?php
-		$other_team=$_GET['name'];
-		$_SESSION['other']=$other_team;
-		include ('matches.php');
-		while ($row=mysqli_fetch_array($query))
-	{	
-		Print '<h3>'."Last Match"."</h3>";
-	if($row['result']>0){
-
-						$a="won";
-					} else if ($row['result']<0){
-						$a="lost";
-					}
+	<?php
+		while ($row=mysqli_fetch_array($last_match)){	
+			Print '<h3>'."Last Match"."</h3>";
+			if($row['result']>0){
+					$a="won";
+				} else if ($row['result']<0){
+					$a="lost";
+				}
 					else { $a="tied";
-					} ;
-		 Printf("Last match against: ".'%s'." on the ".'%s'." and ".'%s',$row['name'],$row['d'],$a);
-		 echo '</br>';
-
-	};
-	while ($row1=mysqli_fetch_array($query1))
-		{
+				} ;
+		 	Printf("Last match against: ".'%s'." on the ".'%s'." and ".'%s',$row['name'],$row['d'],$a);
+		 	echo '</br>';
+		};
+	
+		while ($row1=mysqli_fetch_array($other_stats)){
 			Printf("Total Wins: ".'%s'." Total Losses: ".'%s',$row1['wins'],$row1['losses']);
 		}
 	?>
 	<p>Points, Against, Difference</p>
-			<form action="php/checkchallenge.php" method="POST">
-           Enter Date: <input type="date" name="date" required="required" /> <br/><br/>
-           Enter Time: <input type="time" name="time" required="required" /> <br/><br/>
-           
-           <select name="location">
-
-	<?php
-	$query=mysqli_query($db->link,"SELECT loc_id, loc_name FROM locations");
-	while ($row=mysqli_fetch_array($query))
-		{
-			printf("<option value='%s'>".'%s'."</option>",$row['loc_id'],$row['loc_name']);
-		}
-		?>
-			</select>
-			<input type="submit" class="btn btn-primary" value="submit"/>
+	<form action="php/checkchallenge.php" method="POST">
+	    Enter Date: <input type="date" name="date" required="required" /> <br/><br/>
+	    Enter Time: <input type="time" name="time" required="required" /> <br/><br/>
+	    
+	    <select name="location">
+			<?php
+				while ($row=mysqli_fetch_array($locations)){
+					printf("<option value='%s'>".'%s'."</option>",$row['loc_id'],$row['loc_name']);
+				}
+			?>
+		</select>
+		<input type="submit" class="btn btn-primary" value="submit"/>
      </form>
  
    	

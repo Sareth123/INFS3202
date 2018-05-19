@@ -13,7 +13,7 @@
 
     <body>
     <?php
-      include('navbar.php');
+      include('php/navbar.php');
     ?>
       <section id="page-content">
         <div class="container">
