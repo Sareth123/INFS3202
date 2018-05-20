@@ -52,6 +52,8 @@
 }
     ?>
   </table>
+
+  <button type="button" class="btn btn-primary" align="center" onClick="makeAPDF();">PDF</button>
 <script>
 function challenge(name){
   var url = 'challenge.php?';
@@ -60,6 +62,10 @@ function challenge(name){
     window.location.href = url + query;
  
 };
+function makeAPDF(){
+  var url="php/pdfTeam.php";
+  window.location.href=url;
+}
 </script>
   <?php
       include('footer.php');
