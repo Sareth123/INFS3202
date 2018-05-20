@@ -5,16 +5,43 @@ session_start();
 $db = new MySQLDatabase();
 $db->connect("challenger");
   $username = $_POST['user'];
-  if(empty($username)){
-    $bool = false;
-    echo "Username has been entered incorrectly";
+  if(empty($username)||preg_match('/\s/',$username)){
+      $bool = false;
+      echo "Please enter a username";
     return;
   }
+
   $password = $_POST['pass'];
+  if(strlen($password)<6){
+    $bool = false;
+    echo "Password must be 6 or more characters long";
+    return;
+  }
+  
   $firstname = $_POST['name'];
+  if(empty($firstname)||preg_match('/\s/',$firstname)){
+    $bool = false;
+    echo "Please enter your first name";
+    return;
+  }
   $lastname = $_POST['last'];
+  if(empty($lastname)||preg_match('/\s/',$lastname)){
+    $bool = false;
+    echo "Please enter your last name";
+    return;
+  }
   $email = $_POST['em'];
+  if(empty($email)||preg_match('/\s/',$email)||!strpos($email, '@')){
+    $bool = false;
+    echo "Please enter a valid email";
+    return;
+  }
   $postcode = $_POST['post'];
+  if(empty($postcode)||is_numeric($postcode)){
+    $bool = false;
+    echo "Please enter your postcode";
+    return;
+  }
   $bool = true;
   $query = mysqli_query($db->link,"SELECT * FROM users"); //Query the users table
   while($row = mysqli_fetch_array($query)) //display all rows from query

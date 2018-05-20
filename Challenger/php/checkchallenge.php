@@ -6,6 +6,8 @@
 
 	$user = $_SESSION['user'];
    	$other=$_SESSION['other'];
+   	$o_link="../challenge.php?name=".str_replace(' ','%',$other);
+   	$o_link='"'.$o_link.'"';
 
 	$date = date("Y-m-d",strtotime($_POST['date']));
 	$adate= date('Y/m/d',strtotime("+7day",strtotime($date)));
@@ -16,33 +18,75 @@
     $g_edt = $date."T".$etime;
     $location = $_POST['location'];
 
-    $query8 = mysqli_query($db->link,"SELECT loc_name, address,suburb,state,postcode FROM locations WHERE loc_id='$location'");
-    $rowed=mysqli_fetch_assoc($query8);
-    $loc_name=$rowed['loc_name'];
-	$gloc=$rowed['address'].", ".$rowed['suburb'].", ".$rowed['state']." ".$rowed['postcode'];
-	$query = mysqli_query($db->link,"SELECT tm.team_id, t.name FROM team_members AS tm, users AS u, teams AS t WHERE tm.user_id=u.user_id AND u.username=('$user') AND t.team_id=tm.team_id");
-	$query1 = mysqli_query($db->link,"SELECT team_id, name FROM teams WHERE name=('$other')");
+    $lname = mysqli_query($db->link,
+    	"SELECT * 
+    	FROM locations 
+    	WHERE loc_id='$location'"
+    );
 
-	$row=mysqli_fetch_assoc($query);
-	$row1=mysqli_fetch_assoc($query1);
+    $lrow=mysqli_fetch_assoc($lname);
+    $locName=$lrow['loc_name'];
+	$gloc=$lrow['address'].", ".$lrow['suburb'].", ".$lrow['state']." ".$lrow['postcode'];
 
-	$u_team_id=$row['team_id'];
-	$u_name=$row['name'];
-	$o_team_id=$row1['team_id'];
+
+	$u_idName = mysqli_query($db->link,
+		"SELECT tm.team_id, t.name 
+		FROM team_members AS tm, users AS u, teams AS t
+		WHERE tm.user_id=u.user_id AND u.username=('$user') AND t.team_id=tm.team_id"
+	);
+
+	$o_id = mysqli_query($db->link,
+		"SELECT team_id 
+		FROM teams 
+		WHERE name=('$other')"
+	);
+
+	$uRow=mysqli_fetch_assoc($u_idName);
+	$oRow=mysqli_fetch_assoc($o_id);
+
+	$u_team_id=$uRow['team_id'];
+	$u_name=$uRow['name'];
+	$o_team_id=$oRow['team_id'];
 	$o_name=$other;
 		$bool= true;
 		
 	
-	$query2 = mysqli_query($db->link,"SELECT team1_id, team2_id,date,time FROM challenges, teams WHERE (team1_id = '$o_team_id' OR team2_id = '$o_team_id') AND '$bdate'<=date AND date<='$adate'");
-		if(mysqli_num_rows($query2)>1){
-			$bool=false;
-			
-			Print '<script>alert("Can not choose this date!");</script>'; // Prompts the user
-        		Print '<script>window.location.assign("../ladder.php");</script>'; // redirects to login.php
+	$too_soon = mysqli_query($db->link,
+		"SELECT date,time 
+		FROM challenges, teams
+		WHERE (team1_id = '$o_team_id' OR team2_id = '$o_team_id') AND '$bdate'<=date AND date<='$adate'"
+	);
+	$two_soon = mysqli_query($db->link,
+		"SELECT date,time 
+		FROM challenges, teams
+		WHERE (team1_id = '$u_team_id' OR team2_id = '$u_team_id') AND '$bdate'<=date AND date<='$adate'"
+	);
+	$booked = mysqli_query($db->link,
+		"SELECT date, time
+		FROM challenges
+		WHERE loc_id='$location' AND date='$date'");
 
-		}else{
-	mysqli_query($db->link,"INSERT INTO challenges (team1_id, team2_id, loc_id, date, time,t1_score,t2_score) VALUES ('$o_team_id','$u_team_id','$location','$date','$time','0','0')");
-	$g_summary=$u_name." vs ".$o_name." @".$loc_name;
+
+
+	if(mysqli_num_rows($too_soon)>1){
+		$bool=false;
+		Print '<script>alert("This date is too close to game date for this team, please choose outside 7 days of their booked matches");</script>'; // Prompts the user
+        Printf("<script>window.location.assign(".'%s'.");</script>",$o_link); // redirects to back to challenge.php
+    }else if(mysqli_num_rows($two_soon)>1){
+		$bool=false;
+		Print '<script>alert("This date is too close to match you have, please choose outside of 7 days of your booked games");</script>'; // Prompts the user
+        Printf("<script>window.location.assign(".'%s'.");</script>",$o_link); // redirects to back to challenge.php
+	}else if(mysqli_num_rows($booked)>1){
+		$bool=false;
+		Print '<script>alert("This field is booked on this date");</script>'; // Prompts the user
+       Printf("<script>window.location.assign(".'%s'.");</script>",$o_link); // redirects to back to challenge.php
+
+	}else{
+		mysqli_query($db->link,
+			"INSERT INTO challenges (team1_id, team2_id, loc_id, date, time,t1_score,t2_score) 
+			VALUES ('$o_team_id','$u_team_id','$location','$date','$time','0','0')"
+		);
+	$g_summary=$u_name." vs ".$o_name;
 	include 'addEvent.php';
 
 	

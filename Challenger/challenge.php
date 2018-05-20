@@ -14,7 +14,10 @@
       
 	<?php
 	include('php/navbar.php');
-	///ADD CHECK
+        include('php/connect.php');
+        $db = new MySQLDatabase();
+        $db->connect("challenger");
+
 	if($_SESSION['user']){//checks if user is logged in
 	}
 	else{
@@ -59,6 +62,11 @@
 		</select>
 		<input type="submit" class="btn btn-primary" value="submit"/>
      </form>
+
+     <p>Upcoming Games<p>
+     	<?php
+     	include('quickstart.php');
+     	?>
  
    	
    
