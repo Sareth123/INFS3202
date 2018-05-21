@@ -24,26 +24,25 @@
 		header("location:index.php"); //redirects if user is not logged in
 	}
 	$user = $_SESSION['user'];
+	include('php/queries.php');
 	?>
 	<h2>Team Page</h2>
 	<div id="stats">
 
 	<?php
-	include('php/queries.php');
 	while ($row=mysqli_fetch_array($team_stats))
 		{
 			Print '<p>Wins: '.$row['wins'].' Losses: '.$row['losses']."</p>";
 		}
 		?>
 	</div>
-
 	<table border="1px" width="100%">
 		<tr>
 			<th>Firstname</th>
 			<th>Lastname</th>
 			<th>Email</th>
 			<th>PostCode</th>
-		<tr>
+		</tr>
 	<?php
 		
 	while($row1=mysqli_fetch_array($team_members))
@@ -111,5 +110,26 @@
 	}
 	?>
 	</table>
+</br>
+	<?php $donate = mysqli_query($db->link,"SELECT user_id, donate FROM users WHERE username='$user'");
+
+$hasDonated=mysqli_fetch_assoc($donate);
+$_SESSION['user_id']=$hasDonated['user_id'];
+
+ if($hasDonated['donate']):?>
+		<p>Thankyou!</p>
+	<?php else: ?>
+		<p>Would you like to make a one time donation of $10 via PayPal</p>
+	 	<button type="button" class="btn btn-primary" align="center" onclick='donate()';">Donation</button>
+	<?php endif; ?>
 	</body>
 </html>
+
+
+<script>
+function donate(){
+var url="php/payPal/payment.php";
+window.location.href=url;
+}
+
+</script>
