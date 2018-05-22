@@ -23,10 +23,8 @@
           <div class="row">
             <div class="col-sm text">
               <h1 align='center'>Challenger!</h1>
+
       		    </br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
-              <?php
-              include('quickstart.php');
-              ?>
               <div id="demo" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
@@ -63,6 +61,7 @@
         </div>
       </section>
       <?php
+Print password_hash("rasmuslerdorf", PASSWORD_DEFAULT);
       include('footer.php');
       ?>
     </body>

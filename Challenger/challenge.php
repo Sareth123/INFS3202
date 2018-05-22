@@ -14,6 +14,7 @@
       
 	<?php
 	include('php/navbar.php');
+	include ('quickstart.php');
         include('php/connect.php');
         $db = new MySQLDatabase();
         $db->connect("challenger");

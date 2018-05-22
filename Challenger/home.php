@@ -57,6 +57,7 @@
 	}
 	?>
 	</table>
+	<button type= 'button' class='btn btn-primary'>Update your information</button>
 	<h2>Next Match</h2>
 	<table border="1px" width "100%">
 		<tr>
