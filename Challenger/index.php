@@ -15,8 +15,6 @@
       include('php/navbar.php');
       ?>
 
-    <footer class="bg-dark text-light">
-
       <section id="page-content">
 
         <div class="container">
@@ -61,7 +59,7 @@
         </div>
       </section>
       <?php
-Print password_hash("rasmuslerdorf", PASSWORD_DEFAULT);
+      Print password_hash("rasmuslerdorf", PASSWORD_DEFAULT);
       include('footer.php');
       ?>
     </body>
