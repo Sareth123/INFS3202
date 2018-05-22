@@ -59,7 +59,6 @@
         </div>
       </section>
       <?php
-      Print password_hash("rasmuslerdorf", PASSWORD_DEFAULT);
       include('footer.php');
       ?>
     </body>
