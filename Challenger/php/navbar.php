@@ -15,6 +15,9 @@
 		                <a class="nav-link" href="Locations.php">Locations</a>
 		            </li>
 		            <li class="nav-item">
+		                <a class="nav-link" href="Gallery.php">Gallery</a>
+		            </li>
+		            <li class="nav-item">
 		                <a class="nav-link" href="ContactUs.php">Contact Us</a>
 		            </li>
 		        </ul>
@@ -27,9 +30,7 @@
 		    </div>
 		    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 		        <ul class="navbar-nav ml-auto">
-		            <li class="nav-item">
-		                <a class="nav-link" href="Profile.php">Profile</a>
-		            </li>
+		            
 		            <li class="nav-item">
 		                <a class="nav-link" href="Team.php">Team</a>
 		            </li>
