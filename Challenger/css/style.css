@@ -13,7 +13,8 @@ div.form
     text-align: center;
 }
 
-input {
+
+input.right {
   display: inline-block;
   float: right;
 }

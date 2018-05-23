@@ -9,8 +9,8 @@
     <body>
 
         <form action="php/checklogin.php" method="POST">
-           <label>Enter Username:</label> <input type="text" name="username" required="required" /> <br/><br/>
-           <label>Enter Password:</label> <input type="password" name="password" required="required" /> <br/><br/>
+           <label>Enter Username:</label> <input type="text" name="username" required="required" class="right" /> <br/><br/>
+           <label>Enter Password:</label> <input type="password" name="password" required="required" class="right" /> <br/><br/>
            
            <input type="submit" class="btn btn-primary" value="Login"/>
         </form>

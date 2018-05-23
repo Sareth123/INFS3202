@@ -19,7 +19,9 @@
 							}
 						?></p>
 					</select><br/><br/>
-				    Enter Date: <input type="date" name="date" required="required" /> <br/><br/>
+					<div id=date>
+				    Enter Date: <input type="date" name="date" required="required"; /> <br/><br/>
+				</div>
 				    Enter Time: <input type="time" name="time" required="required" /> <br/><br/>
 				    
 				    <select name="location">

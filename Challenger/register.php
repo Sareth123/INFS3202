@@ -9,16 +9,16 @@
        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      <form>
-      <label>Enter Username:   </label> <input type="text" name="username" required="required" id="user"/>
-      <label>Enter Password:</label> <input type="password" name="password" required="required" id="pass" />
-      <label>Enter first name:</label> <input type="text" name="firstname" required="required" id="name" />
-      <label>Enter last name:</label> <input type="text" name="lastname" required="required" id="last"/>
-      <label>Enter email:</label> <input type="text" name="email" required="required" id="em" />
-      <label>Enter postcode:</label> <input type="text" name="postcode" required="required" id="post" />
+      
+      <label>Enter Username:   </label> <input type="text" name="username" required="required" id="user" class="right"/>
+      <label>Enter Password:</label> <input type="password" name="password" required="required" id="pass" class="right" />
+      <label>Enter first name:</label> <input type="text" name="firstname" required="required" id="name" class="right"/>
+      <label>Enter last name:</label> <input type="text" name="lastname" required="required" id="last"class="right"/>
+      <label>Enter email:</label> <input type="text" name="email" required="required" id="em" class="right"/>
+      <label>Enter postcode:</label> <input type="text" name="postcode" required="required" id="post" class="right" />
       <label id ="button"><input type="submit" class="btn btn-primary" onClick="newTeam()" value="Create a Team" id="new_team"/></label>
       <label id ="button"><input type="submit" class="btn btn-primary" onClick="joinTeam()" value="Join team"/></label>
-      </form>
+      
     </div>
   </body>
 </html>

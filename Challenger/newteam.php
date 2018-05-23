@@ -9,15 +9,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
    
-      <p>Enter Team Name: <input type="text" name="name" required="required" id="user"/></p> <br/>
+      <p>Enter Team Name: <input type="text" name="name" required="required" id="user" class="right"/></p> <br/>
     <!--send email function will be added soon-->
   <div class="email_field">
-      <p>Please enter in 5 of team memebers email addresses:</p>
         <input type="text" name="email" required="required" id="em"/><br>
-        <input type="text" name="email2" required="required" id="em1"/><br>
-        <input type="text" name="email3" required="required" id="em2"/><br>
-        <input type="text" name="email4" required="required" id="em3"/><br>
-        <input type="text" name="email5" required="required" id="em4"/><br>
     </div>
     <input type="submit" class="btn btn-primary" onClick="adding()" value="Create Team"/>
     </body>
@@ -29,11 +24,7 @@ function adding()
 {
     var name = document.getElementById("user").value;
     var em=document.getElementById("em").value;
-    var em=document.getElementById("em1").value;
-    var em=document.getElementById("em2").value;
-    var em=document.getElementById("em3").value;
-    var em=document.getElementById("em4").value;
-    var dataString = 'name='+name+'&em='+em+'&em1='+em1+'&em2='+em2+'&em3='+em3+'&em4='+em4+' ';
+    var dataString = 'name='+name+'&em='+em+' ';
     console.log(dataString);
     $.ajax({
       type:"POST",
