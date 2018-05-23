@@ -7,7 +7,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-nL77CYJngpScZPTmU-wgpUwG1FGbSqY&callback=initMap"
+        async defer></script>
         <title>Challenger</title>
   </head>
   <body>
@@ -19,160 +21,68 @@
           <div class="row">
             <div class="col-sm text">
               <h1>Locations Map</h1>
-              <p>Our locations are as follows:</p>
+              <p>Our locations are as follows (click on the address to open location in google maps):</p>
               <ul align="left">
-                <li>UQ Rugby Club</li>
-                <li>Kenmore Bears Rugby Club</li>
-                <li>Toowong Wests Bulldogs</li>
-                <li>Musgrave Park Southbank</li>
-                <li>Gilbert Park Ashgrove</li>
+                <li>UQ Rugby Club (<a href="https://www.google.com/maps/search/?api=1&query=-27.493332, 153.012228">Sir William MacGregor Dr, St Lucia QLD 4067</a>)</li>
+                <li>Kenmore Bears Rugby Club (<a href="https://www.google.com/maps/search/?api=1&query=-27.514399, 152.9525831">67 Hepworth St, Kenmore QLD 4069</a>)</li>
+                <li>Toowong Wests Bulldogs (<a href="https://www.google.com/maps/search/?api=1&query=-27.480967, 152.992819">Memorial Park, 65 Sylvan Rd, Toowong QLD 4066</a>)</li>
+                <li>Musgrave Park Southbank (<a href="https://www.google.com/maps/search/?api=1&query=-27.478277, 153.017129">121 Cordelia St, South Brisbane QLD 4101</a>)</li>
+                <li>Gilbert Park Ashgrove (<a href="https://www.google.com/maps/search/?api=1&query=-27.447585, 152.996516">Fulcher Rd, Red Hill QLD 4059</a>)</li>
               </ul>
-              <p>Please see the markers on the map below for locations</p>
+              <p>Please see the markers on the map below for locations and use the dropdown to zoom in on a location</p>
             </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <select id="selectlocation">
+              <option value="-27.493332|153.012228|12">Original Map</option>
+            </select>
           </div>
         </div>
       <div id="map"></div>
     </section>
+
     <script>
-      function initMap() {
+      var map;
 
-        var UQ = {lat: -27.493332, lng: 153.012228};
-        var Kenmore = {lat: -27.514399, lng: 152.952583};
-        var Toowong = {lat: -27.480967, lng: 152.992819}
-        var Musgrave = {lat: -27.478277, lng: 153.017129}
-        var Gilbert = {lat:-27.447585, lng: 152.996516 }
+      var markerData= [
+        {lat: -27.493332, lng: 153.012228  , zoom: 15 , name: "UQ"},
+        {lat: -27.514399, lng: 152.9525831  , zoom: 15 , name: "Kenmore"},
+        {lat: -27.480967, lng: 152.992819  , zoom: 15, name: "Toowong"},
+        {lat: -27.478277, lng: 153.017129  , zoom: 15, name: "Musgrave"},
+        {lat: -27.447585, lng: 152.996516  , zoom: 15, name: "Gilbert"},
+      ];
+       
+      function initialize() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: {lat: -27.493332, lng: 153.012228}
+          });
+          markerData.forEach(function(data) {
+            var newmarker= new google.maps.Marker({
+              map:map,
+              position:{lat:data.lat, lng:data.lng},
+              title: data.name
+            });
+            jQuery("#selectlocation").append('<option value="'+[data.lat, data.lng,data.zoom].join('|')+'">'+data.name+'</option>');
+          });
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: Toowong
-        });
+      }
 
-        var contentString1 = '<div id="content">'+
-          '<div id="siteNotice">'+
-          '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">UQ</h1>'+
-          '<div id="bodyContent">'+
-          '<p>Sir William MacGregor Dr, St Lucia QLD 4067</p>'+
-          '</div>'+
-          '</div>';
+      google.maps.event.addDomListener(window, 'load', initialize);
 
-        var contentString2 = '<div id="content">'+
-          '<div id="siteNotice">'+
-          '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">Kenmore</h1>'+
-          '<div id="bodyContent">'+
-          '<p>67 Hepworth St, Kenmore QLD 4069</p>'+
-          '</div>'+
-          '</div>';
-
-        var contentString3 = '<div id="content">'+
-          '<div id="siteNotice">'+
-          '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">Toowong</h1>'+
-          '<div id="bodyContent">'+
-          '<p>Memorial Park, 65 Sylvan Rd, Toowong QLD 4066</p>'+
-          '</div>'+
-          '</div>';
-
-        var contentString4 = '<div id="content">'+
-          '<div id="siteNotice">'+
-          '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">Musgrave</h1>'+
-          '<div id="bodyContent">'+
-          '<p>121 Cordelia St, South Brisbane QLD 4101</p>'+
-          '</div>'+
-          '</div>';
-
-        var contentString5 = '<div id="content">'+
-          '<div id="siteNotice">'+
-          '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">Gilbert</h1>'+
-          '<div id="bodyContent">'+
-          '<p>Fulcher Rd, Red Hill QLD 4059</p>'+
-          '</div>'+
-          '</div>';
-
-        var infowindow1 = new google.maps.InfoWindow({
-            content: contentString1
-        });
-
-        var infowindow2 = new google.maps.InfoWindow({
-            content: contentString2
-        });
-
-        var infowindow3 = new google.maps.InfoWindow({
-            content: contentString3
-        });
-
-        var infowindow4 = new google.maps.InfoWindow({
-            content: contentString4
-        });
-
-        var infowindow5 = new google.maps.InfoWindow({
-            content: contentString5
-        });
-
-        var marker1 = new google.maps.Marker({
-          position: UQ,
-          map: map,
-          optimized: false,
-          draggable: true,
-          animation: google.maps.Animation.DROP
-        });
-        marker1.addListener('click', function() {
-          infowindow1.open(map, marker1);
-        });
-
-        var marker2 = new google.maps.Marker({
-          position: Kenmore,
-          map: map,
-          optimized: false,
-          draggable: true,
-          animation: google.maps.Animation.DROP
-        });
-        marker2.addListener('click', function() {
-          infowindow2.open(map, marker2);
-        });
-
-        var marker3 = new google.maps.Marker({
-          position: Toowong,
-          map: map,
-          optimized: false,
-          draggable: true,
-          animation: google.maps.Animation.DROP
-        });
-        marker3.addListener('click', function() {
-          infowindow3.open(map, marker3);
-        });
-
-        var marker4 = new google.maps.Marker({
-          position: Musgrave,
-          map: map,
-          optimized: false,
-          draggable: true,
-          animation: google.maps.Animation.DROP
-        });
-        marker4.addListener('click', function() {
-          infowindow4.open(map, marker4);
-        });
-
-        var marker5 = new google.maps.Marker({
-          position: Gilbert,
-          map: map,
-          optimized: false,
-          draggable: true,
-          animation: google.maps.Animation.DROP
-        });
-        marker5.addListener('click', function() {
-          infowindow5.open(map, marker5);
-        });
-
-    }
+      jQuery(document).on('change','#selectlocation',function() {
+        var latlngzoom = jQuery(this).val().split('|');
+        var newzoom = 1*latlngzoom[2],
+        newlat = 1*latlngzoom[0],
+        newlng = 1*latlngzoom[1];
+        map.setZoom(newzoom);
+        map.setCenter({lat:newlat, lng:newlng});
+      });
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-nL77CYJngpScZPTmU-wgpUwG1FGbSqY&callback=initMap"
-    async defer></script>
+
     <?php
       include('footer.php');
     ?>
+
   </body>
 </html>

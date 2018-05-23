@@ -5,8 +5,8 @@ $from = "ciaran567@gmail.com";
 $subject = "Challenger contact form message";
 $fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); 
 
-$okMessage = 'Contact form successfully submitted. Thank you!';
-$errorMessage = 'There was an error while submitting the form. Please try again later';
+$okMessage = 'Contact form successfully submitted. Thank you! <br/> <a href="index.php">Return to home page</a>';
+$errorMessage = 'There was an error while submitting the form. Please try again later <br/> <a href="index.php">Return to home page</a>';
 
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);

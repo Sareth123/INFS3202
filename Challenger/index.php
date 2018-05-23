@@ -22,7 +22,7 @@
             <div class="col-sm text">
               <h1 align='center'>Challenger!</h1>
 
-      		    </br> <p>Challenger is an new application allow you and your team manage and challenge your social sports team. You will be able choose which teams you would like to verse! So join and make your team! We have multiple locations to compete at.</p>
+      		    </br>
               <div id="demo" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
@@ -54,6 +54,10 @@
                 </a>
 
               </div>
+              <p>Challenger is an new application allows you and your friend to create a social sports team and challenge your friends and other people! When you sign up you will be able to join whichever ladder you want to compete in and then invite your friends to be a part of your team.</p>
+              <p> So join and make your team! We have multiple locations to compete at, you can see this on our locations page</p>
+              <p>We play with the rules created by TRL Australia, please see our rules page for more information on the rules</p>
+              <p>Currently we only have a mixed ladder and a mens ladder, a womens ladder will be coming soon!</p>
             </div>
           </div>
         </div>
