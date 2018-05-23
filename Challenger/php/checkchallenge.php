@@ -5,10 +5,7 @@
 	session_start();
 
 	$user = $_SESSION['user'];
-   	$other=$_SESSION['other'];
-   	$o_link="../challenge.php?name=".str_replace(' ','%',$other);
-   	$o_link='"'.$o_link.'"';
-
+	$other =$_POST['other_team'];
 	$date = date("Y-m-d",strtotime($_POST['date']));
 	$adate= date('Y/m/d',strtotime("+7day",strtotime($date)));
 	$bdate = date('Y/m/d',strtotime("-7day",strtotime($date)));
@@ -36,9 +33,9 @@
 	);
 
 	$o_id = mysqli_query($db->link,
-		"SELECT team_id 
+		"SELECT name
 		FROM teams 
-		WHERE name=('$other')"
+		WHERE team_id=('$other')"
 	);
 
 	$uRow=mysqli_fetch_assoc($u_idName);
@@ -46,8 +43,8 @@
 
 	$u_team_id=$uRow['team_id'];
 	$u_name=$uRow['name'];
-	$o_team_id=$oRow['team_id'];
-	$o_name=$other;
+	$o_team_id=$other;
+	$o_name=$oRow['name'];
 		$bool= true;
 		
 	
@@ -71,15 +68,15 @@
 	if(mysqli_num_rows($too_soon)>1){
 		$bool=false;
 		Print '<script>alert("This date is too close to game date for this team, please choose outside 7 days of their booked matches");</script>'; // Prompts the user
-        Printf("<script>window.location.assign(".'%s'.");</script>",$o_link); // redirects to back to challenge.php
+        Print("<script>window.location.assign('../ladder.php');</script>"); // redirects to back to challenge.php
     }else if(mysqli_num_rows($two_soon)>1){
 		$bool=false;
 		Print '<script>alert("This date is too close to match you have, please choose outside of 7 days of your booked games");</script>'; // Prompts the user
-        Printf("<script>window.location.assign(".'%s'.");</script>",$o_link); // redirects to back to challenge.php
+        Print("<script>window.location.assign('../ladder.php');</script>"); // redirects to back to challenge.php
 	}else if(mysqli_num_rows($booked)>1){
 		$bool=false;
 		Print '<script>alert("This field is booked on this date");</script>'; // Prompts the user
-       Printf("<script>window.location.assign(".'%s'.");</script>",$o_link); // redirects to back to challenge.php
+       Print("<script>window.location.assign('../ladder.php');</script>"); // redirects to back to challenge.php
 
 	}else{
 		mysqli_query($db->link,

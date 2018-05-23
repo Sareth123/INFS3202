@@ -1,5 +1,5 @@
 <?php
-        include('php/connect.php');
+                include('php/connect.php');
         $db = new MySQLDatabase();
         $db->connect("challenger");
       ?>
@@ -22,19 +22,15 @@
     $users_team=mysqli_fetch_assoc($team_name);
   }
   $teams=mysqli_query($db->link,"SELECT * FROM teams");
-  while ($team=mysqli_fetch_array($teams))
+  while ($team=mysqli_fetch_assoc($teams))
     {
        Print "<tr>";
             Print '<td align="center">'. $team['name'] ."</td>";
             Print '<td align="center">'. $team['wins'] ."</td>";
             Print '<td align="center">'. $team['losses'] ."</td>";
             Print '<td align="center">'."</td>";
-            if(isset($user) && $team['name']!=$users_team['name']){//checks if user is logged in
-            Printf('<td button type="button" class="btn btn-primary" align="center" onClick="challenge(\'%s\');">'."Challenge".'</td>',$team['name']);}else {
-            
-}
-            Print "</tr>";
-}
+            Print '</tr>';
+          }
     ?>
   </table>
 

@@ -23,10 +23,7 @@
 $winMax = mysqli_query($db->link,"SELECT MAX(wins) FROM teams");
 $mRow = mysqli_fetch_assoc($winMax);
 $max = $mRow['MAX(wins)']+1;
-
-
-
-   ?>
+?>
     <script type="text/javascript">
 
         
