@@ -18,48 +18,43 @@
     </head>
 
     <body>
-
-      
-  <script>
-  $( function() {
-    $( "#tabs" ).tabs();
-  } );
-  </script>
-</head>
-<body>
- <?php
+      <?php
         include('php/navbar.php');
       ?>
-<div id="tabs">
-  <ul>
-    <li><a href="#tabs-1">Ladder</a></li>
-    <li><a href="#tabs-2">Stats</a></li>
-    <?php
-  if(isset($_SESSION['user'])){//checks if user is logged in
-  ?>
-    <li><a href="#tabs-3">Challenge</a></li>
-    <?php }
-?>  
-  
-  </ul>
-  <div id="tabs-1">
-    <?php include "ladder_tab1.php"?>
-  </div>
-  <div id="tabs-2">
-    <?php include "stats.php";?>
-  </div>
-  <?php
-  if(isset($_SESSION['user'])){//checks if user is logged in
-  ?><div id="tabs-3">
-    <?php include("ladder_tab3.php");
-    ?>
-  </div>
-<?php }
-?>  
-  
-</div>
-  <?php
-      include('footer.php');
+      <script>
+      $( function() {
+        $( "#tabs" ).tabs();
+      } );
+      </script>
+      <div id="tabs">
+        <ul>
+          <li><a href="#tabs-1">Ladder</a></li>
+          <li><a href="#tabs-2">Stats</a></li>
+          <?php
+        if(isset($_SESSION['user'])){//checks if user is logged in
+        ?>
+          <li><a href="#tabs-3">Challenge</a></li>
+          <?php }
+      ?>  
+        
+        </ul>
+        <div id="tabs-1">
+          <?php include "ladder_tab1.php" ?>
+        </div>
+        <div id="tabs-2">
+          <?php include "stats.php"; ?>
+        </div>
+        <?php
+        if(isset($_SESSION['user'])){//checks if user is logged in
+        ?><div id="tabs-3">
+          <?php include("ladder_tab3.php");
+          ?>
+        </div>
+      <?php }
+      ?>  
+      <?php
+        include('footer.php');
       ?>
+      </div>
   </body>
 </html>
