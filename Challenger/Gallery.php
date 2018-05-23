@@ -28,12 +28,12 @@
                 <hr />
 
                 <div>
-                  <a href="images/TRL_1.jpg" data-lightbox="example-set" data-title="Photo 1"><img src="images/TRL_1_tn.jpg" alt=""/></a>
-                  <a href="images/TRL_2.jpg" data-lightbox="example-set" data-title="Photo 2"><img src="images/TRL_2_tn.jpg" alt="" /></a>
-                  <a href="images/TRL_3.jpg" data-lightbox="example-set" data-title="Photo 3"><img src="images/TRL_3_tn.jpg" alt="" /></a>
-                  <a href="images/TRL_4.jpg" data-lightbox="example-set" data-title="Photo 4"><img src="images/TRL_4_tn.jpg" alt="" /></a>
-                  <a href="images/TRL_5.jpg" data-lightbox="example-set" data-title="Photo 5"><img src="images/TRL_5_tn.jpg" alt="" /></a>
-                  <a href="images/TRL_6.jpg" data-lightbox="example-set" data-title="Photo 6"><img src="images/TRL_6_tn.jpg" alt="" /></a>
+                  <a href="images/TRL_1.jpg" data-lightbox="image-1" data-title="Photo 1"><img src="images/TRL_1_tn.jpg" alt=""/></a>
+                  <a href="images/TRL_2.jpg" data-lightbox="image-1" data-title="Photo 2"><img src="images/TRL_2_tn.jpg" alt="" /></a>
+                  <a href="images/TRL_3.jpg" data-lightbox="image-1" data-title="Photo 3"><img src="images/TRL_3_tn.jpg" alt="" /></a>
+                  <a href="images/TRL_4.jpg" data-lightbox="image-1" data-title="Photo 4"><img src="images/TRL_4_tn.jpg" alt="" /></a>
+                  <a href="images/TRL_5.jpg" data-lightbox="image-1" data-title="Photo 5"><img src="images/TRL_5_tn.jpg" alt="" /></a>
+                  <a href="images/TRL_6.jpg" data-lightbox="image-1" data-title="Photo 6"><img src="images/TRL_6_tn.jpg" alt="" /></a>
                 </div>
               </section>
             </div>

@@ -47,37 +47,124 @@
           center: Toowong
         });
 
-        var contentString = '<div id="content">'+
+        var contentString1 = '<div id="content">'+
           '<div id="siteNotice">'+
           '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">Playing field</h1>'+
+          '<h1 id="firstHeading" class="firstHeading">UQ</h1>'+
           '<div id="bodyContent">'+
-          '<p>Playing field location</p>'+
+          '<p>Sir William MacGregor Dr, St Lucia QLD 4067</p>'+
           '</div>'+
           '</div>';
 
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
+        var contentString2 = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">Kenmore</h1>'+
+          '<div id="bodyContent">'+
+          '<p>67 Hepworth St, Kenmore QLD 4069</p>'+
+          '</div>'+
+          '</div>';
+
+        var contentString3 = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">Toowong</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Memorial Park, 65 Sylvan Rd, Toowong QLD 4066</p>'+
+          '</div>'+
+          '</div>';
+
+        var contentString4 = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">Musgrave</h1>'+
+          '<div id="bodyContent">'+
+          '<p>121 Cordelia St, South Brisbane QLD 4101</p>'+
+          '</div>'+
+          '</div>';
+
+        var contentString5 = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">Gilbert</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Fulcher Rd, Red Hill QLD 4059</p>'+
+          '</div>'+
+          '</div>';
+
+        var infowindow1 = new google.maps.InfoWindow({
+            content: contentString1
         });
+
+        var infowindow2 = new google.maps.InfoWindow({
+            content: contentString2
+        });
+
+        var infowindow3 = new google.maps.InfoWindow({
+            content: contentString3
+        });
+
+        var infowindow4 = new google.maps.InfoWindow({
+            content: contentString4
+        });
+
+        var infowindow5 = new google.maps.InfoWindow({
+            content: contentString5
+        });
+
         var marker1 = new google.maps.Marker({
           position: UQ,
-          map: map, optimized: false
+          map: map,
+          optimized: false,
+          draggable: true,
+          animation: google.maps.Animation.DROP
         });
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+
         var marker2 = new google.maps.Marker({
           position: Kenmore,
-          map: map
+          map: map,
+          optimized: false,
+          draggable: true,
+          animation: google.maps.Animation.DROP
         });
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+
         var marker3 = new google.maps.Marker({
           position: Toowong,
-          map: map
+          map: map,
+          optimized: false,
+          draggable: true,
+          animation: google.maps.Animation.DROP
         });
+        marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });
+
         var marker4 = new google.maps.Marker({
           position: Musgrave,
-          map: map
+          map: map,
+          optimized: false,
+          draggable: true,
+          animation: google.maps.Animation.DROP
         });
+        marker4.addListener('click', function() {
+          infowindow4.open(map, marker4);
+        });
+
         var marker5 = new google.maps.Marker({
           position: Gilbert,
-          map: map
+          map: map,
+          optimized: false,
+          draggable: true,
+          animation: google.maps.Animation.DROP
+        });
+        marker5.addListener('click', function() {
+          infowindow5.open(map, marker5);
         });
 
     }
