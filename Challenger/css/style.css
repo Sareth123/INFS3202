@@ -25,6 +25,11 @@ label{
     text-align: left;
 }
 
+#button{
+  float: right;
+  margin: 5px;
+}
+
 #contact-form
 {
   background-color: #d2d2e0 !important;
