@@ -6,19 +6,19 @@
 		    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
 		        <ul class="navbar-nav mr-auto">
 		            <li class="nav-item">
-		                <a class="nav-link" href="Ladder.php">Ladder</a>
+		                <a class="nav-link" href="ladder.php">Ladder</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="Rules.php">Rules</a>
+		                <a class="nav-link" href="rules.php">Rules</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="Locations.php">Locations</a>
+		                <a class="nav-link" href="locations.php">Locations</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="Gallery.php">Gallery</a>
+		                <a class="nav-link" href="gallery.php">Gallery</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="ContactUs.php">Contact Us</a>
+		                <a class="nav-link" href="contactus.php">Contact Us</a>
 		            </li>
 		        </ul>
 		    </div>
@@ -32,7 +32,7 @@
 		        <ul class="navbar-nav ml-auto">
 		            
 		            <li class="nav-item">
-		                <a class="nav-link" href="Team.php">Team</a>
+		                <a class="nav-link" href="team.php">Team</a>
 		            </li>
 		            <li class="nav-item">
 		                <a class="nav-link" href="php/logout.php">Logout</a>
@@ -45,16 +45,16 @@
 		    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
 		        <ul class="navbar-nav mr-auto">
 		            <li class="nav-item">
-		                <a class="nav-link" href="Ladder.php">Ladder</a>
+		                <a class="nav-link" href="ladder.php">Ladder</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="Rules.php">Rules</a>
+		                <a class="nav-link" href="rules.php">Rules</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="Locations.php">Locations</a>
+		                <a class="nav-link" href="locations.php">Locations</a>
 		            </li>
 		            <li class="nav-item">
-		                <a class="nav-link" href="ContactUs.php">Contact Us</a>
+		                <a class="nav-link" href="contactUs.php">Contact Us</a>
 		            </li>
 		        </ul>
 		    </div>
