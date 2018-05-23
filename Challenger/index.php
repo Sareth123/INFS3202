@@ -35,13 +35,13 @@
                 <!-- The slideshow -->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="assets\TRL_1.jpg" alt="Touch Rugby League">
+                    <img src="images\TRL_1.jpg" alt="Touch Rugby League">
                   </div>
                   <div class="carousel-item">
-                    <img src="assets\TRL_2.jpg" alt="Touch Rugby League">
+                    <img src="images\TRL_2.jpg" alt="Touch Rugby League">
                   </div>
                   <div class="carousel-item">
-                    <img src="assets\TRL_3.jpg" alt="Touch Rugby League">
+                    <img src="images\TRL_3.jpg" alt="Touch Rugby League">
                   </div>
                 </div>
 

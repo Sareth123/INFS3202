@@ -85,7 +85,7 @@ $event = new Google_Service_Calendar_Event(array(
   ),
 ));
 
-$calendarId = 'primary';
+$calendarId = 'sportchallenger123@gmail.com';
 $event = $service->events->insert($calendarId, $event);
 
 
