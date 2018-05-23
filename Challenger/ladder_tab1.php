@@ -11,7 +11,6 @@
       <th>Wins</th>
       <th>Losses</th>
       <th>Last Match</th>
-      <th></th>
 
     </tr>
 
@@ -28,7 +27,7 @@
             Print '<td align="center">'. $team['name'] ."</td>";
             Print '<td align="center">'. $team['wins'] ."</td>";
             Print '<td align="center">'. $team['losses'] ."</td>";
-            Print '<td align="center">'."</td>";
+            Print '<td align="center">'.'</td>';
             Print '</tr>';
           }
     ?>
