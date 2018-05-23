@@ -9,7 +9,7 @@
   
   $username = $_SESSION['username'];
   $password = $_SESSION['password'];
-  $password = password_hash($password, PASSWORD_BCRYPT);
+  $password_hash = password_hash($password, PASSWORD_BCRYPT);
   $firstname = $_SESSION['firstname'];
   $lastname = $_SESSION['lastname'];
   $email = $_SESSION['email'];
@@ -25,7 +25,7 @@
     }
   if($bool) // checks if bool is true
   {
-    mysqli_query($db->link,"INSERT INTO users (username, password, firstname, lastname, email, postcode,donate) VALUES ('$username','$password,'$firstname','$lastname','$email','$postcode',0)"); //Inserts the value to table users
+    mysqli_query($db->link,"INSERT INTO users (username, password, firstname, lastname, email, postcode,donate) VALUES ('$username','$password_hash','$firstname','$lastname','$email','$postcode',0)"); //Inserts the value to table users
     mysqli_query($db->link,"INSERT INTO team_members (team_id, user_id) SELECT team_id,user_id FROM teams, users WHERE code=('$code') AND username =('$username')");
 
     echo"Success";

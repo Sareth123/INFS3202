@@ -60,7 +60,7 @@
     console.log(dataString);
     $.ajax({
       type:"POST",
-      url:"checkregister.php",
+      url:"php/checkregister.php",
       data:dataString,
       success: function(html) {
         if(html.includes('Success')){

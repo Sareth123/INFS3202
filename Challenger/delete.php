@@ -1,16 +1,30 @@
-<?php
-	session_start(); //starts the session
-	if($_SESSION['user']){ //checks if user is logged in
-	}
-	else{
-		header("location:index.php"); // redirects if user is not logged in
-	}
-	if($_SERVER['REQUEST_METHOD'] == "GET")
-	{
-		$con=mysqli_connect("localhost", "root","") or die(mysql_error()); //Connect to server
-		mysqli_select_db($con,"first_db") or die("Cannot connect to database"); //Connect to database
-		$id = $_GET['id'];
-		mysqli_query($con,"DELETE FROM list WHERE id='$id'");
-		header("location: home.php");
-	}
-?>
+
+<html>
+  <head>
+  </head>
+  <body>
+    <script src=https://code.jquery.com/jquery-3.2.1.min.js></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <h2> ARE YOU SURE?</h2>
+        <button type="button" class="btn btn-primary" id="yes">YES</button>
+        <button type="button" class="btn btn-primary" id="no">NO</button>
+    </form>
+    </div>
+  </body>
+</html>
+
+
+
+<script>
+  $('#yes').on('click', function () {
+    var url="php/delete.php";
+	window.location.href=url;
+  });
+  $('#no').on('click', function () {
+    var url="update.php";
+	window.location.href=url;
+  });
+</script>
