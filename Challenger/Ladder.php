@@ -14,6 +14,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
+        <link href='../../fullcalendar-3.9.0/fullcalendar.min.css' rel='stylesheet' />
+
         <title>Challenger</title>
     </head>
 
@@ -34,6 +36,7 @@
         if(isset($_SESSION['user'])){//checks if user is logged in
         ?>
           <li><a href="#tabs-3">Challenge</a></li>
+          <li><a href="#tabs-4">Calendar</a></li>
           <?php }
       ?>  
         
@@ -53,6 +56,13 @@
       <?php }
       ?>  
       
+       <?php
+        if(isset($_SESSION['user'])){//checks if user is logged in
+        ?><div id="tabs-4">
+          <?php include('calendar.php');?>
+        </div>
+      <?php }
+      ?> 
       </div>
       <?php
         include('footer.php');
