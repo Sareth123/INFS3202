@@ -3,6 +3,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -12,61 +18,30 @@
     </head>
 
     <body>
-      <?php
+      
+      
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
+</head>
+<body>
+ <?php
         include('php/navbar.php');
-        include('php/connect.php');
-        $db = new MySQLDatabase();
-        $db->connect("challenger");
       ?>
-  <h2>ladder</h2>
-  
-  <table border="1px" width="100%">
-    <tr>
-      <th>Team Name</th>
-      <th>Wins</th>
-      <th>Losses</th>
-      <th>Last Match</th>
-      <th></th>
-
-    </tr>
-
-  <?php
-  if(isset($_SESSION['user'])){
-    $user = $_SESSION['user'];
-    include 'php/queries.php';
-    $users_team=mysqli_fetch_assoc($team_name);
-  }
-  $teams=mysqli_query($db->link,"SELECT * FROM teams");
-  while ($team=mysqli_fetch_array($teams))
-    {
-       Print "<tr>";
-            Print '<td align="center">'. $team['name'] ."</td>";
-            Print '<td align="center">'. $team['wins'] ."</td>";
-            Print '<td align="center">'. $team['losses'] ."</td>";
-            Print '<td align="center">'."</td>";
-            if(isset($user) && $team['name']!=$users_team['name']){//checks if user is logged in
-            Printf('<td button type="button" class="btn btn-primary" align="center" onClick="challenge(\'%s\');">'."Challenge".'</td>',$team['name']);}else {
-            
-}
-            Print "</tr>";
-}
-    ?>
-  </table>
-
-  <button type="button" class="btn btn-primary" align="center" onClick="makeAPDF();">PDF</button>
-<script>
-function challenge(name){
-  var url = 'challenge.php?';
-    var query = 'name=' + name;
-
-    window.location.href = url + query;
- 
-};
-function makeAPDF(){
-  var url="php/pdfTeam.php";
-  window.location.href=url;
-}
-</script>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Ladder</a></li>
+    <li><a href="#tabs-2">Stats</a></li>
+  </ul>
+  <div id="tabs-1">
+    <?php include "ladder_tab1.php"?>
+  </div>
+  <div id="tabs-2">
+    <?php include "stats.php";?>
+  </div>
+</div>
   <?php
       include('footer.php');
       ?>

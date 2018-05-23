@@ -57,7 +57,7 @@
 	}
 	?>
 	</table>
-	<button type= 'button' class='btn btn-primary'>Update your information</button>
+	<button type= 'button' class='btn btn-primary' onClick="update()">Update your information</button>
 	<h2>Next Match</h2>
 	<table border="1px" width "100%">
 		<tr>
@@ -131,6 +131,11 @@ $_SESSION['user_id']=$hasDonated['user_id'];
 function donate(){
 var url="php/payPal/payment.php";
 window.location.href=url;
-}
+};
+function update(){
+ var url = 'update.php';
+ window.location.href=url;
+ 
+};
 
 </script>
