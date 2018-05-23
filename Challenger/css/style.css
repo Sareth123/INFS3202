@@ -13,9 +13,34 @@ div.form
     text-align: center;
 }
 
-form
+input {
+  display: inline-block;
+  float: right;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    text-align: left;
+}
+
+#button{
+  float: right;
+  margin: 5px;
+}
+
+#contact-form
 {
   background-color: #d2d2e0 !important;
+}
+
+#table-head {
+    background-color: #e6e6e6 !important;
+}
+
+#update-style {
+    background-color: #ffffff !important;
 }
 
 body {
@@ -24,6 +49,10 @@ body {
   margin: 0;
   padding-bottom: 150px;
   min-height: 100%;
+}
+
+table {
+  background-color: #ffffff !important;
 }
 
 html {

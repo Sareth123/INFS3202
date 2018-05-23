@@ -5,8 +5,8 @@
       ?>
   <h2>ladder</h2>
   
-  <table border="1px" width="100%">
-    <tr>
+  <table class="table table-hover" border="1px" width="100%">
+    <tr id="table-head">
       <th>Team Name</th>
       <th>Wins</th>
       <th>Losses</th>

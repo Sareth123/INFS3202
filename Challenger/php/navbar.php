@@ -32,7 +32,7 @@
 		        <ul class="navbar-nav ml-auto">
 		            
 		            <li class="nav-item">
-		                <a class="nav-link" href="team.php">Team</a>
+		                <a class="nav-link" href="home.php">Team</a>
 		            </li>
 		            <li class="nav-item">
 		                <a class="nav-link" href="php/logout.php">Logout</a>
