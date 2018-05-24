@@ -9,23 +9,19 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 		<script  type="text/javascript" src="js/scripts.js"> </script>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
         <title>Challenger</title>
     </head>
 
     <body>
 	    <?php
 			include('php/navbar.php');
-			include('php/connect.php');
-			$db = new MySQLDatabase();
-			$db->connect("challenger");
-			///ADD CHECK
+			
 			if(isset($_SESSION['user'])){
 				}else{
 					header("location:index.php"); //redirects if user is not logged in
 				}
 			$user = $_SESSION['user'];
-			include('php/queries.php');
+			include('php/queries/home_queries.php');
 		?>
 
 		<section id="page-content">
@@ -118,7 +114,7 @@
 					</table>
 				</br>
 				<?php 
-					$donate = mysqli_query($db->link,"SELECT user_id, donate FROM users WHERE username='$user'");
+					
 					$hasDonated=mysqli_fetch_assoc($donate);
 					$_SESSION['user_id']=$hasDonated['user_id'];
 

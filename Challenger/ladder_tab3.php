@@ -6,7 +6,8 @@
 				<h2>Challenge</h2>
 				<form action="php/checkchallenge.php" method="POST">
 					Verse: <select name ="other_team">
-						<?php 
+						<?php
+							include('php/queries/ladder_tab3_queries.php');
 							while ($row1=mysqli_fetch_array($other_team_names)){
 								printf("<option value='%s'>".'%s'."</option>",$row1['team_id'],$row1['name']);
 							}

@@ -39,7 +39,7 @@
        }
        if(($username == $table_users))// checks if there are any matching fields
        {
-             $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+             $_SESSION['ref'] = $username; //set the username in a session. This serves as a global variable
              header("location: ../referee.php"); // redirects the user to the authenticated home page
        }
        else

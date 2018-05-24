@@ -1,7 +1,7 @@
 
 //To do 'Donation'
 function donate(){
-var url="../php/payPal/payment.php";
+var url="php/payPal/payment.php";
 window.location.href=url;
 };
 

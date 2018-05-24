@@ -14,35 +14,31 @@
         <br/>
         
    
-      <p>Enter Team Name: <input type="text" name="name" required="required" id="user" class="right"/></p> <br/>
-    <!--send email function will be added soon-->
-  <div class="email_field">
-        <input type="text" name="email" required="required" id="em"/><br>
-    </div>
-    <input type="submit" class="btn btn-primary" onClick="adding()" value="Create Team"/>
+      <p>Enter Team Name: <input type="text" name="name" required="required" id="user"class="right"/></p> <br/>
+      <p>Enter Team code: <input type ="text" name="id" required="required" id="code"class="right"/></p>
+    <input type="submit" class="btn btn-primary" onClick="join()" value="Join Team"/>
     </body>
 </html>
 
 <script type = "text/javascript">
-
-function adding()
-{
+  function join()
+  {
     var name = document.getElementById("user").value;
-    var em=document.getElementById("em").value;
-    var dataString = 'name='+name+'&em='+em+' ';
+    var code = document.getElementById("code").value;
+    var dataString = 'name='+name+'&code='+code+' ';
     console.log(dataString);
     $.ajax({
       type:"POST",
-      url:"php/checknewteam.php",
+      url:"php/checkjoin.php",
       data:dataString,
-      success: function(html) {
-        if(html=='Success'){
-           alert(html);
-        }{
-      alert(html);
+        success: function(html) {
+          if(html=='Success'){
+             alert(html);
+          }{
+            alert(html);
+          }
+        }
       }
-      }
-    });
+    );
   };
-
 </script>
