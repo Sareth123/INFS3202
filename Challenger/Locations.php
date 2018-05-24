@@ -14,7 +14,7 @@
   </head>
   <body>
     <?php
-    include('php/navbar.php');
+      include('php/navbar.php');
     ?>
     <section id="page-content">
         <div class="container">

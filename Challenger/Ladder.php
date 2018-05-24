@@ -30,6 +30,8 @@
       <script type="text/javascript" src="js/jqwidgets/jqxdraw.js"></script>
       <script type="text/javascript" src="js/jqwidgets/jqxbargauge.js"></script>
       <script type="text/javascript" src="js/jqwidgets/script/demos.js"></script>
+
+      <script  type="text/javascript" src="js/scripts.js"> </script>
       
       <title>Challenger</title>
     </head>

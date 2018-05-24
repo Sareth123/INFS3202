@@ -8,6 +8,7 @@
 		WHERE u.username=('$user') AND u.user_id=tm.user_id AND tm.team_id=t.team_id"
 	);
 
+	
 	$team_members = mysqli_query($db->link,"SELECT firstname, lastname, email, postcode 
 		FROM users AS used, (SELECT user_id 
 			FROM team_members AS ts, (SELECT t.team_id 
@@ -41,6 +42,12 @@
 		WHERE t.team_id=tm.team_id AND tm.user_id=u.user_id AND u.username=('$user')"
 	);
 
+	$other_team_names = mysqli_query($db->link,"SELECT t.* 
+		FROM teams AS t, team_members as tm, users AS u 
+		WHERE t.team_id = tm.team_id AND tm.user_id=u.user_id AND u.username != '$user'"
+	);
+
+
 	}
 
 	//Select queries if another team has been 'selected'
@@ -61,9 +68,11 @@
 		WHERE name=('$other_team')"
 	);
 
+	
+	}
+
 	$locations=mysqli_query($db->link,
 		"SELECT loc_id, loc_name 
 		FROM locations"
 	);
-	}
 ?>

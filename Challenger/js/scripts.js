@@ -11,5 +11,11 @@ function update(){
  window.location.href=url;
 };
 
+//Go to fpdf function
+function makeAPDF(){
+  var url="php/pdfTeam.php";
+  window.location.href=url;
+}
+
 
 
