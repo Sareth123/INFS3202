@@ -1,7 +1,4 @@
-
-<script>
-
-  $(document).ready(function() {
+$(document).ready(function() {
 
     $('#calendar').fullCalendar({
 
@@ -31,25 +28,3 @@
     });
 
   });
-
-</script>
-<style>
-
-
-  
-
-  #calendar {
-    max-width: 45%;
-    margin: 0 auto;
-  }
-
-</style>
-
-<body>
-
-  
-
-  <div id='calendar'></div>
-
-</body>
-</html>

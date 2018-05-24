@@ -12,16 +12,14 @@
 
     <body>
     	<?php
-      include('php/navbar.php');
+        include('php/navbar.php');
       ?>
 
       <section id="page-content">
-
         <div class="container">
           <div class="row">
             <div class="col-sm text">
               <h1 align='center'>Challenger!</h1>
-
       		    </br>
               <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -64,10 +62,7 @@
         </div>
       </section>
       <?php
-      include('footer.php');
+        include('footer.php');
       ?>
     </body>
-    <br/>
-    
-       
 </html> 

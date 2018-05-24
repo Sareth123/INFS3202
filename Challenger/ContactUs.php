@@ -27,7 +27,7 @@
               <p>If you have any feedback you want to send us or if you have some kind of issue/question then please fill out the form below</p>
               <p>If you have an urgent request (e.g. Something has happened in the game you are currently playing and you need an immediate response) then call us on 0400 000 000.</p>
               <p>If you have a less urgent enquiry then feel free to email us at Challenger@gmail.com or fill out the Contact Form.</p>
-              <form id="contact-form" method="post" action="form_email.php" role="form">
+              <form id="contact-form" method="post" action="php/form_email.php" role="form">
               <h3>Contact Form</h3>
                 <div class="messages"></div>
                 <div class="controls">

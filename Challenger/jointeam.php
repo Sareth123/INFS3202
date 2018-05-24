@@ -22,9 +22,8 @@
 </html>
 
 <script type = "text/javascript">
-
-function join()
-{
+  function join()
+  {
     var name = document.getElementById("user").value;
     var code = document.getElementById("code").value;
     var dataString = 'name='+name+'&code='+code+' ';
@@ -33,14 +32,14 @@ function join()
       type:"POST",
       url:"php/checkjoin.php",
       data:dataString,
-      success: function(html) {
-        if(html=='Success'){
-           alert(html);
-        }{
-      alert(html);
+        success: function(html) {
+          if(html=='Success'){
+             alert(html);
+          }{
+            alert(html);
+          }
+        }
       }
-      }
-    });
+    );
   };
-
 </script>

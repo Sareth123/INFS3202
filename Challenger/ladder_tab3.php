@@ -1,10 +1,4 @@
-	<?php 
-
-	//$other_team=$_GET['name'];
-	//$_SESSION['other']=$other_team;
-	//include('php/queries.php');
-	?>
-
+<body>
 	<section id="page-content">
         <div class="container">
           <div class="row">
@@ -41,8 +35,4 @@
 		  </div>
 		</div>
 	</section>
- 
-   	
-   
-  <br><br>
-	</body>
+</body>
