@@ -7,6 +7,11 @@
     <link rel ="stylesheet" href="css/style.css">
       </head>
     <body>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        <h4>Login</h4> 
+        <br/>
 
         <form action="php/checklogin.php" method="POST">
            <label>Enter Username:</label> <input type="text" name="username" required="required" class="right" /> <br/><br/>

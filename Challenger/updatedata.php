@@ -8,6 +8,11 @@
   <link rel ="stylesheet" href="css/style.css">
   </head>
   <body>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        <h4>Update</h4> 
+        <br/>
 
         <form action="php/checkUpdate.php" method="POST">
           <label>Update Password:</label> <input type="password" name="password"/> <br/><br/>

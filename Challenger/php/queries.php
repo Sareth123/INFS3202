@@ -3,7 +3,7 @@
 	if(isset($user)){
 	
 	$team_stats = mysqli_query($db->link,
-		"SELECT wins, losses 
+		"SELECT name, wins, losses 
 		FROM teams AS t, team_members AS tm, users AS u 
 		WHERE u.username=('$user') AND u.user_id=tm.user_id AND tm.team_id=t.team_id"
 	);

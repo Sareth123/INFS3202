@@ -30,15 +30,16 @@
         <div class="container">
           <div class="row">
             <div class="col-sm text">
-				<h2>(team name) Team Page</h2>
-				<div id="stats">
-
-				<?php
+            	<?php
 				while ($row=mysqli_fetch_array($team_stats))
-					{
+					{	Print '<h2>'.$row['name']." Team Page".'</h2>';
+						Print'<div id="stats">';
 						Print '<p>Wins: '.$row['wins'].' Losses: '.$row['losses']."</p>";
 					}
 					?>
+				
+
+				
 				</div>
 				<table class="table table-hover" border="1px">
 					<tr id="table-head">
@@ -124,7 +125,7 @@
 			 if($hasDonated['donate']):?>
 					<p>Thankyou!</p>
 				<?php else: ?>
-					<p>Would you like to make a one time donation of $10 via PayPal? Donations help to keep the website up and running and allows us to pay our refs for the fantastic job they do!</p>
+					<p>Would you like to make a one time donation of $10 via PayPal? Donations help to keep the website up and running and allows us to pay our refs for the fantastic job they do! We will send you a sticker as a thankyou.</p>
 				 	<button type="button" class="btn btn-primary" align="center" onclick='donate()';">Donation</button>
 				<?php endif; ?>
 				</div>

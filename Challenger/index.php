@@ -58,8 +58,7 @@
               <p> So join and make your team! We have multiple locations to compete at, you can see this on our locations page</p>
               <p>We play with the rules created by TRL Australia, please see our rules page for more information on the rules</p>
               <p>Currently we only have a mixed ladder and a mens ladder, a womens ladder will be coming soon!</p>
-              <p>Would you like to make a one time donation of $10 via PayPal? Donations help to keep the website up and running and allows us to pay our refs for the fantastic job they do!</p>
-              <button type="button" class="btn btn-primary" align="center" onclick='donate()';">Donation</button>
+             
             </div>
           </div>
         </div>
