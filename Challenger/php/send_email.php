@@ -7,10 +7,6 @@ $name = $_POST['name'];
 $first = $_POST['first'];
 $last = $_POST['last'];
 $code = $_POST['code'];
-
-	
-
-	
   $subject = "Join Challenger!";
   $message = "Your friend ".$first." ".$last." would you like you to Join: ".$name." to join use this code: ".$code;
 $from = "sportschallenger123@gmail.com";
