@@ -3,8 +3,8 @@
     include('php/connect.php');
     $db = new MySQLDatabase();
     $db->connect("challenger");
+    include('php/queries/ladder_tab1_queries.php');
   ?>
-  <h2>ladder</h2>
   
   <table class="table table-hover" border="1px" width="100%">
       <tr id="table-head">
@@ -17,17 +17,16 @@
       <?php
         if(isset($_SESSION['user'])){
           $user = $_SESSION['user'];
-          include 'php/queries.php';
-          $users_team=mysqli_fetch_assoc($team_name);
+          
         }
-        $teams=mysqli_query($db->link,"SELECT * FROM teams");
+        
         while ($team=mysqli_fetch_assoc($teams))
         {
          Print "<tr>";
               Print '<td align="center">'. $team['name'] ."</td>";
               Print '<td align="center">'. $team['wins'] ."</td>";
               Print '<td align="center">'. $team['losses'] ."</td>";
-              Print '<td align="center">'.'</td>';
+              Print '<td align="center">'.$team['MAX(c.date)'].'</td>';
           Print '</tr>';
         }
       ?>

@@ -26,11 +26,7 @@
         
       <script type="text/javascript" src="js/calendar.js"></script>
       <!---fullcalendar-->
-      <script type="text/javascript" src="js/jqwidgets/jqxcore.js"></script>
-      <script type="text/javascript" src="js/jqwidgets/jqxdraw.js"></script>
-      <script type="text/javascript" src="js/jqwidgets/jqxbargauge.js"></script>
-      <script type="text/javascript" src="js/jqwidgets/script/demos.js"></script>
-
+      
       <script  type="text/javascript" src="js/scripts.js"> </script>
       
       <title>Challenger</title>

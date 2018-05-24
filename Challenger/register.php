@@ -48,7 +48,7 @@
         if(html.includes('Success')){
           alert(html);
            $("#register_body").remove();
-          $("#body").load("newteam.php");
+          $("#body").load("reg/newteam.php");
         }{
       alert(html);
       }
@@ -73,7 +73,7 @@
         if(html.includes('Success')){
           alert(html);
            $("#register_body").remove();
-          $("#body").load("jointeam.php");
+          $("#body").load("reg/jointeam.php");
         }{
       alert(html);
       }

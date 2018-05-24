@@ -9,6 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />
     
+
+    <script type="text/javascript" src="js/jqwidgets/jqxcore.js"></script>
+      <script type="text/javascript" src="js/jqwidgets/jqxdraw.js"></script>
+      <script type="text/javascript" src="js/jqwidgets/jqxbargauge.js"></script>
+      <script type="text/javascript" src="js/jqwidgets/script/demos.js"></script>
+
     
    
 
@@ -21,6 +27,8 @@
    </div>
    <div id ="losses">
    </div>
+   <div id="for">
+   </div>
     
 
 <script>
@@ -30,13 +38,16 @@
     $("#stats").on('change',function(){
        if(this.value=="losses"){
         $("#wins").empty();
+        $("#for").empty();
         $("#losses").load("loss.php");
         }else if(this.value=="wins"){
             $("#losses").empty();
+            $("#for").empty();
             $("#wins").load("wins.php");
         }else if(this.value=="for"){
             $("#losses").empty();
-            $("#wins").load("foragainst.php");
+            $("#losses").empty();
+            $("#for").load("foragainst.php");
         }
     });
 
