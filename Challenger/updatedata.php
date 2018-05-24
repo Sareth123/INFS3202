@@ -15,9 +15,9 @@
         <br/>
 
         <form action="php/checkUpdate.php" method="POST">
-          <label>Update Password:</label> <input type="password" name="password"/> <br/><br/>
-          <label>Update Email:</label> <input type="text" name="email"/><br/><br/>
-          <label>Update Postcode:</label> <input type='text' name="postcode"/><br/><br/>
+          <label>Update Password:</label> <input type="password" name="password" class="right"/> <br/><br/>
+          <label>Update Email:</label> <input type="text" name="email" class="right"/><br/><br/>
+          <label>Update Postcode:</label> <input type='text' name="postcode" class="right"/><br/><br/>
          <input type="submit" class="btn btn-primary" value="Update"/>
         </form>
 

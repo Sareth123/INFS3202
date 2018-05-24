@@ -37,12 +37,14 @@
     
   </ul>
   <div id="tabs-1">
-    <?php include "ref_tab1.php"?>
+    <?php include "ref_tab1.php" ?>
   </div>
   <div id="tabs-2">
-    <?php include "ref_tab2.php";?>
+    <?php include "ref_tab2.php"; ?>
   </div>
 </div>
-  
+  <? php 
+  include('footer.php');
+  ?>
 
 </html>

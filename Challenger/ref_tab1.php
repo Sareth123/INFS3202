@@ -12,8 +12,8 @@ include('php/connect.php');
 	");
 	?>
 
-	<table width="100%">
-	<tr>
+	<table class="table table-hover">
+	<tr id="table-head">
       <th>Match</th>
       <th>Date</th>
       <th>Location</th>
