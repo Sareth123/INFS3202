@@ -1,4 +1,50 @@
-﻿team_id,username,password,firstname,lastname,email,postcode,donate
-NULL,albertus,$2y$10$2TbF/O1aVy3p7qM/1Z48m.vfbiwL49.G42ZXp1RVQOjX3./palZr2,Albert,Thompson,grantthompson123@hotmail.com,4069,0
-NULL,stevenfo,$2y$10$uoqNwwLW1M7Hi0LMmOec/.Pjn6lOZpMkOQxIgKKSNrcncA3e2Ev/y,Grant,Steven,albertthompson123@hotmail.com,4068,0
-NULL,Gordon,$2y$10$X3vV09wPUJPXAyjMd5oxL.6mKAGKMpwXBsTAoEpMNfKehTiEmKksy,Mitch,Gordon,weplaytouch@hotmail.com,4067,0
+user_id	username	password	firstname	lastname	email	postcode	donate
+1	albertus	$2y$10$2TbF/O1aVy3p7qM/1Z48m.vfbiwL49.G42ZXp1RVQOjX3./palZr2	Albert	Thompson	grantthompson123@hotmail.com	4069	0
+2	stevenfo	$2y$10$uoqNwwLW1M7Hi0LMmOec/.Pjn6lOZpMkOQxIgKKSNrcncA3e2Ev/y	Grant	Steven	albertthompson123@hotmail.com	4068	0
+3	Gordon	$2y$10$X3vV09wPUJPXAyjMd5oxL.6mKAGKMpwXBsTAoEpMNfKehTiEmKksy	Mitch	Gordon	weplaytouch@hotmail.com	4067	0
+4	AGallagher		Arthur	Gallagher	AGallagher@gmail.com	4069	0
+5	OMarsh		Oscar	Marsh	OMarsh@gmail.com	4068	0
+6	LRogers		Logan	Rogers	LRogers@gmail.com	4067	0
+7	DBaker		Daniel	Baker	DBaker@gmail.com	4069	0
+8	JHunt		Jacob	Hunt	JHunt@gmail.com	4068	0
+9	DRamirez		Danny	Ramirez	DRamirez@gmail.com	4067	0
+10	ISchroeder		Ibrahim	Schroeder	ISchroeder@gmail.com	4069	0
+11	BHensley		Blake	Hensley	BHensley@gmail.com	4068	0
+12	AHensley		Arlo	Hensley	AHensley@gmail.com	4067	0
+13	LWatson		Lance	Watson	LWatson@gmail.com	4069	0
+14	CClarke		Charlie	Clarke	CClarke@gmail.com	4068	0
+15	ZMacdonald		Zac	Macdonald	ZMacdonald@gmail.com	4067	0
+16	BDean		Benjamin	Dean	BDean@gmail.com	4069	0
+17	DBarker		Dominic	Barker	DBarker@gmail.com	4068	0
+18	HSmith		Harley	Smith	HSmith@gmail.com	4067	0
+19	LTorres		Lucca	Torres	LTorres@gmail.com	4069	0
+20	JReynolds		Jakob	Reynolds	JReynolds@gmail.com	4068	0
+21	ERios		Erick	Rios	ERios@gmail.com	4067	0
+22	TEwing		Tony	Ewing	TEwing@gmail.com	4069	0
+23	CKaufman		Cohen	Kaufman	CKaufman@gmail.com	4068	0
+24	OFletcher		Oscar	Fletcher	OFletcher@gmail.com	4067	0
+25	OHussain		Ollie	Hussain	OHussain@gmail.com	4069	0
+26	RBurns		Rhys	Burns	RBurns@gmail.com	4068	0
+27	RHenderson		Reece	Henderson	RHenderson@gmail.com	4067	0
+28	TEdwards		Tommy	Edwards	TEdwards@gmail.com	4069	0
+29	RBridges		Rory	Bridges	RBridges@gmail.com	4068	0
+30	BWare		Brecken 	Ware	BWare@gmail.com	4067	0
+31	RBallard		Reece	Ballard	RBallard@gmail.com	4069	0
+32	BGuy		Bruno	Guy	BGuy@gmail.com	4068	0
+33	DLindsay		Darrell	Lindsay	DLindsay@gmail.com	4067	0
+34	TDoyle		Tommy	Doyle	TDoyle@gmail.com	4069	0
+35	LRoberts		Logan	Roberts	LRoberts@gmail.com	4068	0
+36	LCook		Leo	Cook	LCook@gmail.com	4067	0
+37	DCunningham		Dominic	Cunningham	DCunningham@gmail.com	4069	0
+38	KRoberts		Kyle	Roberts	KRoberts@gmail.com	4068	0
+39	SFowler		Stefan	Fowler	SFowler@gmail.com	4067	0
+40	KFinley		Karson	Finley	KFinley@gmail.com	4069	0
+41	MHunt		Max	Hunt	MHunt@gmail.com	4068	0
+42	RBradshaw		Ross	Bradshaw	RBradshaw@gmail.com	4067	0
+43	KSparks		Kyrie	Sparks	KSparks@gmail.com	4069	0
+44	JKnight		Joe	Knight	JKnight@gmail.com	4068	0
+45	EMiller		Ewan	Miller	EMiller@gmail.com	4067	0
+46	TJohnson		Tommy	Johnson	TJohnson@gmail.com	4069	0
+47	JPalmer		Joshua	Palmer	JPalmer@gmail.com	4068	0
+48	KGamble		Kasen	Gamble	KGamble@gmail.com	4067	0
+49	Ewagner		Erik	Wagner	EWagner@gmail.com	4066	0

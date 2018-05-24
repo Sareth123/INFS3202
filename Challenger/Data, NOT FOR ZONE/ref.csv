@@ -1,3 +1,3 @@
-﻿ref_id,username,password,lastname,email,number
-NULL,JohnDoe,$2y$10$S9JjOyDcG4AeE5nnzrvWY.vwDVkaKsKcjid99qScbmEYlLDLx6aTK,Johnson,John123@gmail.com,403060507
-NULL,JaneDoe,$2y$10$5/Fg9BiRHp9HX2IjYl.khOHCx67YGQuYdG0zb73GyDC0mr5VDlaRK,Thompson,Jane123@gmail.com,403060507
+ref_id	username	password	lastname	email	number
+1	JohnDoe	$2y$10$S9JjOyDcG4AeE5nnzrvWY.vwDVkaKsKcjid99qScbmEYlLDLx6aTK	Johnson	John123@gmail.com	0412345678
+2	JaneDoe	$2y$10$5/Fg9BiRHp9HX2IjYl.khOHCx67YGQuYdG0zb73GyDC0mr5VDlaRK	Thompson	Jane123@gmail.com	0403060507
