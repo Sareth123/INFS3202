@@ -30,10 +30,12 @@
 	}
 	$user = $_SESSION['user'];
    	$details=mysqli_query($db->link,"SELECT * FROM users WHERE username ='$user'");
+    $name = mysqli_query($db->link,"SELECT name FROM teams AS t, team_members AS tm, users AS u WHERE u.username='$user' AND u.user_id=tm.user_id AND tm.team_id=t.team_id");
    	$drow=mysqli_fetch_assoc($details);
+    $nrow=mysqli_fetch_assoc($name);
    	Print $drow['firstname']." ".$drow['lastname']." these are your current details:";
    	echo '<br>';
-   	Print "Team: ";
+   	Print "Team: ".$nrow['name'];
    	echo '<br>';
    	Print "Username: ". $drow['username'];
    	echo '<br>';

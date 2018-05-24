@@ -12,8 +12,6 @@ div.form
     display: block;
     text-align: center;
 }
-
-
 input.right {
   display: inline-block;
   float: right;

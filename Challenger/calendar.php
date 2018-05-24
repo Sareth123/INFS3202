@@ -1,8 +1,4 @@
-<link href='css/fullcalendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-<script src='js/fullcalendar/moment.min.js'></script>
 
-<script src='js/fullcalendar/fullcalendar.min.js'></script>
-<script src='js/fullcalendar/gcal.min.js'></script>
 <script>
 
   $(document).ready(function() {
@@ -30,9 +26,7 @@
         return false;
       },
 
-      loading: function(bool) {
-        $('#loading').toggle(bool);
-      }
+      
 
     });
 
