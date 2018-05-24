@@ -15,9 +15,6 @@
         
    
       <p>Enter Team Name: <input type="text" name="name" required="required" id="user" class="right"/></p> <br/>
-    <div class="email_field">
-        <input type="text" name="email" required="required" id="em"/><br>
-    </div>
       <input type="submit" class="btn btn-primary" onClick="adding()" value="Create Team"/>
     </body>
 </html>
