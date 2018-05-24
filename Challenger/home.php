@@ -113,6 +113,29 @@
 
 					</table>
 				</br>
+				<?php
+				$details = mysqli_query($db->link,"SELECT t.name, t.code, u.firstname, u.lastname FROM teams AS t, users AS u, team_members AS tm WHERE u.username='$user' AND u.user_id = tm.user_id AND tm.team_id = t.team_id");
+				$drow = mysqli_fetch_assoc($details);
+				Print $user.$drow['name'].$drow["code"];
+
+
+				?>
+				<form action="php/send_email.php" method="POST">
+				<?php 
+					Printf("<input type='hidden' name='user' value=
+			"."%s".">",$user);
+					Printf("<input type='hidden' name='name' value=
+			"."%s".">",$drow['name']);
+					Printf("<input type='hidden' name='code' value=
+			"."%s".">",$drow['code']);
+					Printf("<input type='hidden' name='first' value=
+			"."%s".">",$drow['firstname']);
+					Printf("<input type='hidden' name='last' value=
+			"."%s".">",$drow['lastname']);
+			?>
+           		Invite your friend to join your team:<input type="text" name="email" required="required"/>
+           		<input type="submit" class="btn btn-primary" value="Invite"/>
+        		</form>
 				<?php 
 					
 					$hasDonated=mysqli_fetch_assoc($donate);
